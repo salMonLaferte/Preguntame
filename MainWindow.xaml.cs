@@ -22,7 +22,24 @@ namespace Preguntame
     {
         public MainWindow()
         {
+            Dictionary<String, List<Question>> materias = new Dictionary<string, List<Question>>();
+            bool studyAll = false;
+            bool deleteOnApeareance = false;
+            int aciertos = 0;
+            int errores = 0;
+
+            Data.ReadData();
+
             InitializeComponent();
+            
+        }
+
+        private void Pregunta_Click(object sender, RoutedEventArgs e)
+        {
+            Question q = Data.GetQuestion();
+            q.GenerateListOfOptions(1, 3);
+            List<QuestionOption> m = q.getOptions();
+            MessageBox.Show(m[0].content);
         }
     }
 }

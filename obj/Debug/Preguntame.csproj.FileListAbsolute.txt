@@ -1,0 +1,15 @@
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\Preguntame.exe.config
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\Preguntame.exe
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\Preguntame.pdb
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csprojAssemblyReference.cache
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\MainWindow.g.cs
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\App.g.cs
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame_MarkupCompile.cache
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame_MarkupCompile.lref
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\MainWindow.baml
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.g.resources
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.Properties.Resources.resources
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.GenerateResource.cache
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.CoreCompileInputs.cache
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.exe
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.pdb
