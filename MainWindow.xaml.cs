@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
 namespace Preguntame
 {
@@ -29,7 +30,6 @@ namespace Preguntame
             int errores = 0;
 
             Data.ReadData();
-
             InitializeComponent();
             
         }
@@ -37,9 +37,22 @@ namespace Preguntame
         private void Pregunta_Click(object sender, RoutedEventArgs e)
         {
             Question q = Data.GetQuestion();
-            q.GenerateListOfOptions(1, 3);
-            List<QuestionOption> m = q.getOptions();
-            MessageBox.Show(m[0].content);
+            List<QuestionOption> options = q.GenerateAndGetListOfOptions(Settings.rightAnswers, Settings.wrongAnswers);
+            QuestionText.Text = q.GetQuestionText();
+            OptionsPanel.Children.Clear();
+            for(int i=0; i< options.Count; i++)
+            {
+                CheckBox box = new CheckBox();
+                box.Content = options[i].content;
+                Thickness t = new Thickness(0, 10, 0, 0);
+                box.Margin = t;
+                box.HorizontalAlignment = HorizontalAlignment.Left;
+                box.VerticalAlignment = VerticalAlignment.Top;
+                
+                OptionsPanel.Children.Add(box);
+            }
+           
+            
         }
     }
 }

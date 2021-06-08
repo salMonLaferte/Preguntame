@@ -38,6 +38,8 @@ namespace Preguntame
                 {
                     parent.AddQuestion(q);
                     questionCount++;
+                    questionlist.Add(q);
+                    questionCount++;
                     return;
                 }
             }
@@ -81,7 +83,7 @@ namespace Preguntame
                 end_p = text.IndexOf(']', start_p);
                 string answer = text.Substring(start_p + 1, end_p - start_p - 1);
                 string[] wrong = { "yolo" };
-                Question pr = new Question(texto, opciones.ToArray(), wrong, theme);
+                Question pr = new Question(texto, wrong, opciones.ToArray(),  theme);
                 Data.AddQuestion(pr);
             }
         }

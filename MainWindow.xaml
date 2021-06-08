@@ -5,9 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Preguntame"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="720" Width="1280" FontSize="16">
     <Grid>
-        <Button Name="Pregunta" Width="200" Height="20" Click="Pregunta_Click">Pregunta</Button>
+        <WrapPanel Width="1220" Height="520" VerticalAlignment="Top" HorizontalAlignment="Left"
+                 Margin="20,20">
+            <StackPanel Width="1220" MaxHeight="520">
+                <ScrollViewer Width="1220" MaxHeight="250"  VerticalAlignment="Top" HorizontalAlignment="Left"
+                 Margin="0,20,0,0">
+                    <TextBox Width="1100" Name="QuestionText"   VerticalAlignment="Top" HorizontalAlignment="Center" UseLayoutRounding="False"
+                             Margin="20,20,20,20" TextWrapping="WrapWithOverflow">
+                        Question
+                    </TextBox>
+                </ScrollViewer>
+                <ScrollViewer Width="1220" MaxHeight="270"  VerticalAlignment="Top" HorizontalAlignment="Left"
+                 Margin="0,20,0,0">
+                    <StackPanel Width="1220" Name="OptionsPanel"></StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+            
+        </WrapPanel>
+        <Button Name="Pregunta" Width="100" Height="100" Click="Pregunta_Click"
+                VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                Margin="20">Pregunta</Button>
+        
+
+        
 
     </Grid>
 </Window>

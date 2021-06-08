@@ -47,7 +47,7 @@ namespace Preguntame
         /// <param name="rightAnswers">number of right answers, has to be =>1 </param>
         /// <param name="wrongAnswers">number of wrong answers</param>
         /// <returns></returns>
-        public int GenerateListOfOptions( int rightAnswers, int wrongAnswers)
+        int GenerateListOfOptions( int rightAnswers, int wrongAnswers)
         {
             if (rightAnswers <= 0)
                 return -1;
@@ -67,6 +67,7 @@ namespace Preguntame
                 int index = rand.Next(wlist.Count);
                 qOption.Add(new QuestionOption(true, wlist[index]));
                 wlist.RemoveAt(index);
+                wrongCounter++;
             }
             return 0;
         }
@@ -76,7 +77,7 @@ namespace Preguntame
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public bool checkAnswer(int number)
+        public bool CheckAnswer(int number)
         {
             return qOption[number].isRight;
         }
@@ -86,7 +87,7 @@ namespace Preguntame
         /// </summary>
         /// <param name="numbers"></param>
         /// <returns></returns>
-        public bool checkAnswers(int[] numbers)
+        public bool CheckAnswers(int[] numbers)
         {
             for(int i=0; i<numbers.Length; i++)
             {
@@ -96,9 +97,24 @@ namespace Preguntame
             return true;
         }
 
-        public List<QuestionOption> getOptions()
+        /// <summary>
+        /// Get the question text
+        /// </summary>
+        /// <returns></returns>
+        public string GetQuestionText()
         {
+            return question;
+        }
+
+        /// <summary>
+        /// Generate a random set of options with the specified right and wrong answers 
+        /// </summary>
+        /// <returns></returns>
+        public List<QuestionOption> GenerateAndGetListOfOptions( int rightAnswers, int wrongAnswers)
+        {
+            GenerateListOfOptions(rightAnswers, wrongAnswers);
             return qOption;
         }
+
     }
 }
