@@ -12,21 +12,25 @@
             <StackPanel Width="1220" MaxHeight="520">
                 <ScrollViewer Width="1220" MaxHeight="250"  VerticalAlignment="Top" HorizontalAlignment="Left"
                  Margin="0,20,0,0">
-                    <TextBox Width="1100" Name="QuestionText"   VerticalAlignment="Top" HorizontalAlignment="Center" UseLayoutRounding="False"
+                    <TextBlock Width="1100" Name="QuestionText"   VerticalAlignment="Top" HorizontalAlignment="Center" UseLayoutRounding="False"
                              Margin="20,20,20,20" TextWrapping="WrapWithOverflow">
                         Question
-                    </TextBox>
+                    </TextBlock>
                 </ScrollViewer>
                 <ScrollViewer Width="1220" MaxHeight="270"  VerticalAlignment="Top" HorizontalAlignment="Left"
-                 Margin="0,20,0,0">
+                 Margin="0,40,0,0">
                     <StackPanel Width="1220" Name="OptionsPanel"></StackPanel>
                 </ScrollViewer>
             </StackPanel>
             
         </WrapPanel>
-        <Button Name="Pregunta" Width="100" Height="100" Click="Pregunta_Click"
+        <WrapPanel Margin="20,257,32,20" Width="1220" Height="100" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+            <Button Name="Pregunta" Width="100" Height="60" Click="Pregunta_Click"
                 VerticalAlignment="Bottom" HorizontalAlignment="Left"
                 Margin="20">Pregunta</Button>
+            <Button Name="Verificar" Width="100" Height="60" Click="Verificar_Click"
+                VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="20">Verificar</Button>
+        </WrapPanel>
         
 
         

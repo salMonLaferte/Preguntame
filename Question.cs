@@ -8,7 +8,6 @@ namespace Preguntame
 {
     public class Question
     {
-        static string abc = "ABCDEFGHIJKLMNOPQRSTU";
         string question;
         string[] optionsRight;
         string[] optionsWrong;
@@ -24,9 +23,7 @@ namespace Preguntame
         /// </summary>
         public string TAG;
 
-        bool questionIsCorrupted = true;
-
-        public Question(string question, string[] optionsRight, string[] optionsWrong, string TAG = "default")
+        public Question(string question = "", string[] optionsRight = null, string[] optionsWrong = null, string TAG = "default")
         {
             qOption = new List<QuestionOption>();
             this.question = question;
@@ -65,7 +62,7 @@ namespace Preguntame
             while(wrongCounter < wrongAnswers && wlist.Count > 0)
             {
                 int index = rand.Next(wlist.Count);
-                qOption.Add(new QuestionOption(true, wlist[index]));
+                qOption.Add(new QuestionOption(false, wlist[index]));
                 wlist.RemoveAt(index);
                 wrongCounter++;
             }

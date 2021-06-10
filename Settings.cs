@@ -8,7 +8,13 @@ namespace Preguntame
 {
     public static class Settings
     {
-        public static int wrongAnswers = 4;
+        public static string optionCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        public static int wrongAnswers = 6;
         public static int rightAnswers = 1;
+
+        public static char GetCharacterForOption(int num)
+        {
+            return optionCharacters[num];
+        }
     }
 }
