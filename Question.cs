@@ -11,6 +11,7 @@ namespace Preguntame
         string question;
         string[] optionsRight;
         string[] optionsWrong;
+        bool questionIsCorrupted;
 
         /// <summary>
         /// A list of options for the question with a determined number of right and wrong answers, has to be set with the
@@ -52,19 +53,26 @@ namespace Preguntame
             List<string> rlist = optionsRight.ToList<string>();
             List<string> wlist = optionsWrong.ToList<string>();
             qOption.Clear();
-            while(rlist.Count > 0 && qOption.Count < rightAnswers)
+            List<QuestionOption> auxOption = new List<QuestionOption>();
+            while(rlist.Count > 0 && auxOption.Count < rightAnswers)
             {
                 int index = rand.Next(rlist.Count);
-                qOption.Add(new QuestionOption(true, rlist[index]));
+                auxOption.Add(new QuestionOption(true, rlist[index]));
                 rlist.RemoveAt(index);
             }
             int wrongCounter = 0;
             while(wrongCounter < wrongAnswers && wlist.Count > 0)
             {
                 int index = rand.Next(wlist.Count);
-                qOption.Add(new QuestionOption(false, wlist[index]));
+                auxOption.Add(new QuestionOption(false, wlist[index]));
                 wlist.RemoveAt(index);
                 wrongCounter++;
+            }
+            while(auxOption.Count > 0)
+            {
+                int index = rand.Next(auxOption.Count);
+                qOption.Add(auxOption[index]);
+                auxOption.RemoveAt(index);
             }
             return 0;
         }

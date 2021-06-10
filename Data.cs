@@ -58,32 +58,37 @@ namespace Preguntame
                 if (s < 0)
                     break;
                 f = text.IndexOf('}', s);
-                int start_p = text.IndexOf('[', s);
+                int start_p = text.IndexOf('[', s) + 1;
                 int end_p = text.IndexOf(']', s);
-                string texto = text.Substring(start_p + 1, end_p - start_p - 1);
+                string texto = text.Substring(start_p, end_p - start_p);
+
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
-                List<String> opciones = new List<String>();
+                string rightOpStr = text.Substring(start_p, end_p - start_p );
+                string[] rightOptions = rightOpStr.Split('|');
+                /*List<String> optionsRight = new List<String>();
                 while (true)
                 {
                     int sep = text.IndexOf('|', start_p);
                     if (sep < 0 || sep > f)
                     {
-                        opciones.Add(text.Substring(start_p, end_p - start_p - 1));
+                        optionsRight.Add(text.Substring(start_p, end_p - start_p - 1));
                         start_p = end_p + 1;
                         break;
                     }
-                    opciones.Add(text.Substring(start_p, sep - start_p - 1));
+                    optionsRight.Add(text.Substring(start_p, sep - start_p - 1));
                     start_p = sep + 1;
-                }
-                start_p = text.IndexOf('[', end_p);
+                }*/
+                start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
-                string theme = text.Substring(start_p + 1, end_p - start_p - 1);
-                start_p = text.IndexOf('[', end_p);
+                string wrongOpStr = text.Substring(start_p, end_p - start_p);
+                string[] wrongOptions = wrongOpStr.Split('|');
+
+                start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
-                string answer = text.Substring(start_p + 1, end_p - start_p - 1);
-                string[] wrong = { "yolo" };
-                Question pr = new Question(texto, wrong, opciones.ToArray(),  theme);
+                string theme = text.Substring(start_p , end_p - start_p );
+                
+                Question pr = new Question(texto, wrongOptions, rightOptions,  theme);
                 Data.AddQuestion(pr);
             }
         }
