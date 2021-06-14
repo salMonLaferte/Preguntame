@@ -13,3 +13,5 @@ C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.Ge
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.CoreCompileInputs.cache
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.exe
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.pdb
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Opciones.g.cs
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Opciones.baml

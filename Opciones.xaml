@@ -1,0 +1,56 @@
+﻿<Window x:Class="Preguntame.Opciones"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Preguntame"
+        mc:Ignorable="d"
+        Title="Opciones" Height="460" Width="450" FontSize="12" ResizeMode="NoResize" >
+    <Grid>
+        <TabControl>
+            <TabItem Name="QuestionTab" Header="Preguntas" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid>
+                    <ListBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="435">
+                        <ListBoxItem HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Width="400">
+                                Modo de respuesta valida:
+                            </Label>
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            <ComboBox Name="OptionName" HorizontalAlignment="Right" VerticalAlignment="Top" >
+                                <ComboBoxItem  Name="Right_MarkAll">se seleccionan todas las opciones correctas</ComboBoxItem>
+                                <ComboBoxItem Name="Right_MarkOne">se selecciona almenos una opción correcta</ComboBoxItem>
+                            </ComboBox>
+                        </ListBoxItem>
+                        <Separator></Separator>
+                        <ListBoxItem>
+                            <Grid Width="420">
+                                <Label>Número de opciones incorrectas por pregunta.</Label>
+                                <TextBox Name="OptWrong" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Margin="0,0,20,0"></TextBox>
+                            </Grid>
+                        </ListBoxItem>
+                        <Separator></Separator>
+                        <ListBoxItem >
+                            <Grid Width="420">
+                                <Label>Número de opciones correctas por pregunta.</Label>
+                                <TextBox Name="OptRight" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Margin="0,0,20,0">
+                                </TextBox>
+                            </Grid>
+                        </ListBoxItem>
+                        <Separator></Separator>
+                        <ListBoxItem >
+                            <CheckBox Name="RandOptRight">Número aleatorio de opciones correctas.</CheckBox>
+                        </ListBoxItem>
+                        <Separator></Separator>
+                        <ListBoxItem >
+                            <CheckBox Name="RandOptWrong">Número aleatorio de opciones incorrectas.</CheckBox>
+                        </ListBoxItem>
+    
+                    </ListBox>
+                    <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="20" Click="Save_Click">Guardar</Button>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>

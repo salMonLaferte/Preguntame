@@ -12,6 +12,7 @@ namespace Preguntame
         string[] optionsRight;
         string[] optionsWrong;
         bool questionIsCorrupted;
+        bool appearedInThisSession = false; 
 
         /// <summary>
         /// A list of options for the question with a determined number of right and wrong answers, has to be set with the
@@ -84,7 +85,7 @@ namespace Preguntame
         /// <returns></returns>
         public bool CheckAnswer(int number)
         {
-            return qOption[number].isRight;
+            return qOption[number].IsRight();
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Preguntame
         {
             for(int i=0; i<numbers.Length; i++)
             {
-                if (!qOption[numbers[i]].isRight)
+                if (!qOption[numbers[i]].IsRight())
                     return false;
             }
             return true;

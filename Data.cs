@@ -10,6 +10,8 @@ namespace Preguntame
     {
         static List<SubTheme> themes = new List<SubTheme>();
         static List<Question> questionlist = new List<Question>();
+        static int cntSesionRightAns = 0;
+        static int cntSesionWrongAns = 0;
         static int questionCount = 0;
 
         public static void AddTheme( string parentTAG, string name, string TAG)
@@ -54,43 +56,46 @@ namespace Preguntame
             int f = 0;
             while (f < text.Length)
             {
+                //Get the indexes where the data from the current questions begins and ends
                 int s = text.IndexOf('{', f);
                 if (s < 0)
                     break;
                 f = text.IndexOf('}', s);
+
+                //Get the text part from the question
                 int start_p = text.IndexOf('[', s) + 1;
                 int end_p = text.IndexOf(']', s);
                 string texto = text.Substring(start_p, end_p - start_p);
 
+                //Get an array of the correct answers
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
                 string rightOpStr = text.Substring(start_p, end_p - start_p );
                 string[] rightOptions = rightOpStr.Split('|');
-                /*List<String> optionsRight = new List<String>();
-                while (true)
-                {
-                    int sep = text.IndexOf('|', start_p);
-                    if (sep < 0 || sep > f)
-                    {
-                        optionsRight.Add(text.Substring(start_p, end_p - start_p - 1));
-                        start_p = end_p + 1;
-                        break;
-                    }
-                    optionsRight.Add(text.Substring(start_p, sep - start_p - 1));
-                    start_p = sep + 1;
-                }*/
+                
+                //Get an array of the wrong answers
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
                 string wrongOpStr = text.Substring(start_p, end_p - start_p);
                 string[] wrongOptions = wrongOpStr.Split('|');
 
+                //Get the TAG of the question
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
                 string theme = text.Substring(start_p , end_p - start_p );
                 
+                //Cronstuct the question
                 Question pr = new Question(texto, wrongOptions, rightOptions,  theme);
                 Data.AddQuestion(pr);
             }
+        }
+
+        public static void questionAnswered(bool isRight)
+        {
+            if (isRight)
+                cntSesionRightAns++;
+            else
+                cntSesionWrongAns++;
         }
 
         public static Question GetQuestion()
@@ -98,12 +103,8 @@ namespace Preguntame
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             return questionlist[rand.Next(questionlist.Count)];
         }
-        
-        /*public static SubTheme GetRandomTheme()
-        {
-            Random rand = new Random();
-            int value = rand.Next(themes.Count);
-        }*/
+
+
 
     }
 }

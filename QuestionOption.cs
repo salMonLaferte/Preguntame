@@ -8,13 +8,22 @@ namespace Preguntame
 {
     public class QuestionOption
     {
-        public string content;
-        public bool isRight;
+        private string content;
+        private bool isRight;
         public QuestionOption(bool isRight, string content)
         {
             this.content = content;
             this.isRight = isRight;
         }
-            
+
+        public string GetContent()
+        {
+            return content;
+        }
+
+        public bool IsRight()
+        {
+            return isRight;
+        }
     }
 }
