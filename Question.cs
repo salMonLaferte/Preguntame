@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Preguntame
 {
     public class Question
     {
+        [JsonInclude]
         string question;
         string[] optionsRight;
         string[] optionsWrong;
@@ -25,6 +28,13 @@ namespace Preguntame
         /// </summary>
         public string TAG;
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="question">body of the question</param>
+        /// <param name="optionsRight">correct options for the questions</param>
+        /// <param name="optionsWrong">wrong options for the question</param>
+        /// <param name="TAG"></param>
         public Question(string question = "", string[] optionsRight = null, string[] optionsWrong = null, string TAG = "default")
         {
             qOption = new List<QuestionOption>();
@@ -43,26 +53,29 @@ namespace Preguntame
         /// If the number of required right answers is bigger than the number of right answers
         /// on the question data, it will take all the right answers for the options.
         /// </summary>
-        /// <param name="rightAnswers">number of right answers, has to be =>1 </param>
-        /// <param name="wrongAnswers">number of wrong answers</param>
+        /// <param name="rightOptions">number of right answers, has to be =>0 </param>
+        /// <param name="totalOptions">number of totalOptions</param>
         /// <returns></returns>
-        int GenerateListOfOptions( int rightAnswers, int wrongAnswers)
+        int GenerateListOfOptions( int rightOptions, int totalOptions)
         {
-            if (rightAnswers <= 0)
+            if (rightOptions < 0 || totalOptions - rightOptions <0 || totalOptions == 0)
                 return -1;
             Random rand = new Random();
+            if(Data.settings.randRightOptions)
+                rightOptions = rand.Next(totalOptions);
+            int wrongOptions = totalOptions - rightOptions;
             List<string> rlist = optionsRight.ToList<string>();
             List<string> wlist = optionsWrong.ToList<string>();
             qOption.Clear();
             List<QuestionOption> auxOption = new List<QuestionOption>();
-            while(rlist.Count > 0 && auxOption.Count < rightAnswers)
+            while(rlist.Count > 0 && auxOption.Count < rightOptions)
             {
                 int index = rand.Next(rlist.Count);
                 auxOption.Add(new QuestionOption(true, rlist[index]));
                 rlist.RemoveAt(index);
             }
             int wrongCounter = 0;
-            while(wrongCounter < wrongAnswers && wlist.Count > 0)
+            while(wrongCounter < wrongOptions && wlist.Count > 0)
             {
                 int index = rand.Next(wlist.Count);
                 auxOption.Add(new QuestionOption(false, wlist[index]));
@@ -116,9 +129,9 @@ namespace Preguntame
         /// Generate a random set of options with the specified right and wrong answers 
         /// </summary>
         /// <returns></returns>
-        public List<QuestionOption> GenerateAndGetListOfOptions( int rightAnswers, int wrongAnswers)
+        public List<QuestionOption> GenerateAndGetListOfOptions( int rightOptions, int totalOptions)
         {
-            GenerateListOfOptions(rightAnswers, wrongAnswers);
+            GenerateListOfOptions(rightOptions, totalOptions);
             return qOption;
         }
 

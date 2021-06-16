@@ -25,8 +25,8 @@
                         <Separator></Separator>
                         <ListBoxItem>
                             <Grid Width="420">
-                                <Label>Número de opciones incorrectas por pregunta.</Label>
-                                <TextBox Name="OptWrong" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Margin="0,0,20,0"></TextBox>
+                                <Label>Total de opciones por pregunta.</Label>
+                                <TextBox Name="TotalOpt" HorizontalAlignment="Right" VerticalAlignment="Center" Width="50" Margin="0,0,20,0"></TextBox>
                             </Grid>
                         </ListBoxItem>
                         <Separator></Separator>
@@ -39,15 +39,14 @@
                         </ListBoxItem>
                         <Separator></Separator>
                         <ListBoxItem >
-                            <CheckBox Name="RandOptRight">Número aleatorio de opciones correctas.</CheckBox>
+                            <CheckBox Name="RandOptRight" Checked="RandOptRight_Checked" Unchecked="RandOptRight_Unchecked_1">Número aleatorio de opciones correctas.</CheckBox>
                         </ListBoxItem>
                         <Separator></Separator>
-                        <ListBoxItem >
-                            <CheckBox Name="RandOptWrong">Número aleatorio de opciones incorrectas.</CheckBox>
-                        </ListBoxItem>
-    
+                        
                     </ListBox>
                     <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="20" Click="Save_Click">Guardar</Button>
+                    <TextBlock Name="ErrorSaving" FontWeight="Bold" TextWrapping="WrapWithOverflow" MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                      Margin="20,150"></TextBlock>
                 </Grid>
             </TabItem>
 

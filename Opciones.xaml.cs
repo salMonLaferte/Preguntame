@@ -21,43 +21,81 @@ namespace Preguntame
     {
         public Opciones()
         {
-            
             InitializeComponent();
             LoadSettings();
         }
 
         void LoadSettings()
         {
-            OptWrong.Text = Settings.wrongAnswers.ToString();
-            OptRight.Text = Settings.rightAnswers.ToString();
-            RandOptRight.IsChecked = Settings.randRightAnswers;
-            RandOptWrong.IsChecked = Settings.randWrongAnswers;
-            OptionName.SelectedIndex = (int)Settings.rAnsMode;
+            TotalOpt.Text = Data.settings.totalOptions.ToString();
+            OptRight.Text = Data.settings.rightOptions.ToString();
+            RandOptRight.IsChecked = Data.settings.randRightOptions;
+            RandOptRight.UpdateLayout();
+            OptionName.SelectedIndex = (int)Data.settings.rAnsMode;
+            OptionName.UpdateLayout();
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (SaveSettings())
+            string error = SaveSettings();
+            if (error == "")
+            {
                 Close();
+            }
+            else
+                ErrorSaving.Text = error;
         }
 
-        bool SaveSettings()
+        string SaveSettings()
         {
-            int wrongOpt = 0;
-            int rightOpt = 0;
-            if (Int32.TryParse(OptWrong.Text, out wrongOpt)
-                && Int32.TryParse(OptRight.Text, out rightOpt)
+            int totalOp, rightOpt = 0;
+            if (Int32.TryParse(TotalOpt.Text, out totalOp)       
                 && RandOptRight.IsChecked !=null
-                && RandOptWrong.IsChecked !=null)
+                && OptionName.SelectedIndex !=-1)
             {
-                Settings.ChangeSettings(wrongOpt, rightOpt, (bool)RandOptWrong.IsChecked, (bool)RandOptRight.IsChecked);
+                if (totalOp > 0)
+                {
+                    if (RandOptRight.IsChecked == true || Int32.TryParse(OptRight.Text, out rightOpt))
+                    {
+                        if (rightOpt < 0)
+                            rightOpt = 0;
+                        if (totalOp - rightOpt < 0)
+                            return "El numero de opciones totales no puede ser mayor que el numero de opciones correctas";
+                        else {
+                            Data.settings.ChangeSettings(totalOp, rightOpt, (bool)RandOptRight.IsChecked, (Settings.RightAnswerMode)OptionName.SelectedIndex);
+                            Data.WriteSettings();
+                        }
+                       
+                    }
+                    else
+                    {
+                        return "Por favor introduce un número válido para el total de opciones correctas por pregunta o marca aleatorio.";
+                    }
+                }
+                else
+                    return "El total de opciones por pregunta no puede ser igual o menor que cero.";
             }
             else
             {
-                return false;
+                if (!Int32.TryParse(TotalOpt.Text, out totalOp))
+                    return "Por favor introduce un número válido para el total de opciones.";
+                if (OptionName.SelectedIndex != -1)
+                    return "Por favor selecciona un modo de respuesta correcta.";
             }
-            return true;
+            return "";
         }
 
+        private void RandOptRight_Checked(object sender, RoutedEventArgs e)
+        {
+            OptRight.IsReadOnly = true;
+            OptRight.Opacity = .5;
+        }
+
+
+        private void RandOptRight_Unchecked_1(object sender, RoutedEventArgs e)
+        {
+            OptRight.IsReadOnly = false;
+            OptRight.Opacity = 1;
+        }
     }
 }

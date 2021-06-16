@@ -16,11 +16,19 @@ namespace Preguntame
             this.isRight = isRight;
         }
 
+        /// <summary>
+        /// Get the string of the question option
+        /// </summary>
+        /// <returns></returns> 
         public string GetContent()
         {
             return content;
         }
 
+        /// <summary>
+        /// Get if the option is right 
+        /// </summary>
+        /// <returns></returns>
         public bool IsRight()
         {
             return isRight;

@@ -1,0 +1,6 @@
+{
+  "totalOptions": 8,
+  "rightOptions": 4,
+  "randRightOptions": false,
+  "rAnsMode": 1
+}

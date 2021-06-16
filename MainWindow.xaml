@@ -30,6 +30,7 @@
             <Button Name="Opciones" Width="187" Height="60" Click="Opciones_Click"
                 VerticalAlignment="Bottom" HorizontalAlignment="Right"
                 Margin="20" >Opciones</Button>
+            <TextBlock Name="Status" Margin="20" Width="192" FontSize="12"></TextBlock>
         </WrapPanel>
 
 

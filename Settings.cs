@@ -3,32 +3,40 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.Json;
+using System.Text.Json.Serialization;
 namespace Preguntame
 {
-    public static class Settings
+    public class Settings
     {
+        [JsonInclude]
+        public  int totalOptions;
+        public  int rightOptions;
+        public  bool randRightOptions;
+        public RightAnswerMode rAnsMode = RightAnswerMode.MarkAll;
+
         public static string optionCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        public static int wrongAnswers = 3;
-        public static int rightAnswers = 1;
-        public static bool randWrongAnswers = false;
-        public static bool randRightAnswers = false;
 
-        public static RightAnswerMode rAnsMode = RightAnswerMode.MarkAll;
+        public Settings()
+        {
+            totalOptions = 4;
+            rightOptions = 1;
+            randRightOptions = false;
+            rAnsMode = RightAnswerMode.MarkAll;
+        }
 
-        public static char GetCharacterForOption(int num)
+        public  char GetCharacterForOption(int num)
         {
             return optionCharacters[num];
         }
 
-        public static void ChangeSettings( int wrongAnswers = 3, int rightAnswers = 1, bool randWrongAnswers = false,
+        public  void ChangeSettings( int totalOptions = 4, int rightAnswers = 1,
             bool randRightAnswers = false, RightAnswerMode rAnsMode = RightAnswerMode.MarkAll)
         {
-            Settings.wrongAnswers = wrongAnswers;
-            Settings.rightAnswers = rightAnswers;
-            Settings.randRightAnswers = randRightAnswers;
-            Settings.randWrongAnswers = randWrongAnswers;
-            Settings.rAnsMode = rAnsMode;
+            this.totalOptions = totalOptions;
+            this.rightOptions = rightAnswers;
+            this.randRightOptions = randRightAnswers;
+            this.rAnsMode = rAnsMode;
         }
 
         public enum RightAnswerMode

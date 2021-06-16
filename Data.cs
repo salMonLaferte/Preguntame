@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace Preguntame
 {
@@ -14,12 +15,15 @@ namespace Preguntame
         static int cntSesionWrongAns = 0;
         static int questionCount = 0;
 
-        public static void AddTheme( string parentTAG, string name, string TAG)
+
+        public static Settings settings = new Settings();
+
+        public static void AddTheme(string parentTAG, string name, string TAG)
         {
             if (parentTAG == "")
                 themes.Add(new SubTheme(name, TAG));
             SubTheme n = new SubTheme(name, TAG);
-            foreach(SubTheme t in themes)
+            foreach (SubTheme t in themes)
             {
                 SubTheme parent = t.GetChildWithTAG(TAG);
                 if (parent != null)
@@ -52,7 +56,7 @@ namespace Preguntame
 
         public static void ReadData()
         {
-            string text = System.IO.File.ReadAllText(@"C:\Users\Dr ID\Documents\pregu.txt");
+            string text = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + "\\pregu.txt");
             int f = 0;
             while (f < text.Length)
             {
@@ -70,9 +74,9 @@ namespace Preguntame
                 //Get an array of the correct answers
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
-                string rightOpStr = text.Substring(start_p, end_p - start_p );
+                string rightOpStr = text.Substring(start_p, end_p - start_p);
                 string[] rightOptions = rightOpStr.Split('|');
-                
+
                 //Get an array of the wrong answers
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
@@ -82,20 +86,21 @@ namespace Preguntame
                 //Get the TAG of the question
                 start_p = text.IndexOf('[', end_p) + 1;
                 end_p = text.IndexOf(']', start_p);
-                string theme = text.Substring(start_p , end_p - start_p );
-                
+                string theme = text.Substring(start_p, end_p - start_p);
+
                 //Cronstuct the question
-                Question pr = new Question(texto, wrongOptions, rightOptions,  theme);
+                Question pr = new Question(texto, wrongOptions, rightOptions, theme);
                 Data.AddQuestion(pr);
             }
         }
 
-        public static void questionAnswered(bool isRight)
+        public static void QuestionAnswered(bool isRight)
         {
             if (isRight)
                 cntSesionRightAns++;
             else
                 cntSesionWrongAns++;
+
         }
 
         public static Question GetQuestion()
@@ -104,7 +109,27 @@ namespace Preguntame
             return questionlist[rand.Next(questionlist.Count)];
         }
 
+        public static void WriteSettings()
+        {
+            var options = new JsonSerializerOptions { WriteIndented = true, IncludeFields = true };
+            string s = JsonSerializer.Serialize(settings, options);
+            System.IO.File.WriteAllText(System.AppDomain.CurrentDomain.BaseDirectory + "\\settings.txt", s);
+        }
 
+        public static void ReadSettings()
+        {
+            if (System.IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "\\settings.txt"))
+            {
+                string s = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + "\\settings.txt");
+                var options = new JsonSerializerOptions { WriteIndented = true, IncludeFields = true };
+                settings = JsonSerializer.Deserialize<Settings>(s, options);
+            }
+        }
 
+        public static string GetSesionInfo()
+        {
+            return "Sesion actual: \n Aciertos=" + cntSesionRightAns.ToString() + "\n Errores:" + cntSesionWrongAns.ToString();
+        }
+        
     }
 }
