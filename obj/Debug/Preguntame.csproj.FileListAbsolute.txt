@@ -34,3 +34,4 @@ C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\System.Text.Json.xml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\System.ValueTuple.xml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.CopyComplete
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.AboutBox1.resources

@@ -88,6 +88,10 @@ namespace Preguntame
                     if (op.Key.IsChecked == true)
                         selectedOnes.Add(op.Key);
                 }
+                if (op.Value)
+                    op.Key.Foreground = Brushes.DarkGreen;
+                else
+                    op.Key.Foreground = Brushes.Red;
             }
             string textToShow = "";
 

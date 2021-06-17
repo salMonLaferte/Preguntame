@@ -128,7 +128,7 @@ namespace Preguntame
 
         public static string GetSesionInfo()
         {
-            return "Sesion actual: \n Aciertos=" + cntSesionRightAns.ToString() + "\n Errores:" + cntSesionWrongAns.ToString();
+            return "Sesion actual:    Aciertos = " + cntSesionRightAns.ToString() + "   |    Errores = " + cntSesionWrongAns.ToString();
         }
         
     }

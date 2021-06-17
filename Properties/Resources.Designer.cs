@@ -59,27 +59,5 @@ namespace Preguntame.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a { [¿Cuál de los siguientes números es par?] 
-        ///[ 1 | 3 | 5 | 7 | 1333 | 2143]
-        ///[ 2 | 4 | 6 | 8 ]
-        ///[MAT] }
-        ///{ [¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los siguientes números es par?¿Cuál de los  [resto de la cadena truncado]&quot;;.
-        /// </summary>
-        internal static string pregu {
-            get {
-                return ResourceManager.GetString("pregu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string settings {
-            get {
-                return ResourceManager.GetString("settings", resourceCulture);
-            }
-        }
     }
 }

@@ -62,8 +62,11 @@ namespace Preguntame
                 return -1;
             Random rand = new Random();
             if(Data.settings.randRightOptions)
-                rightOptions = rand.Next(totalOptions);
+                rightOptions = rand.Next(totalOptions)+1;
+            if (rightOptions > optionsRight.Length)
+                rightOptions = optionsRight.Length;
             int wrongOptions = totalOptions - rightOptions;
+            
             List<string> rlist = optionsRight.ToList<string>();
             List<string> wlist = optionsWrong.ToList<string>();
             qOption.Clear();

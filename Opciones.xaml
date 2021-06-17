@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Preguntame"
         mc:Ignorable="d"
-        Title="Opciones" Height="460" Width="450" FontSize="12" ResizeMode="NoResize" >
+        Title="Opciones" Height="460" Width="450" FontSize="12" ResizeMode="NoResize" Icon="settings.ico">
     <Grid>
         <TabControl>
             <TabItem Name="QuestionTab" Header="Preguntas" HorizontalAlignment="Left" VerticalAlignment="Top">
