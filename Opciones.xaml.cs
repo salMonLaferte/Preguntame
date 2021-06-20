@@ -33,6 +33,13 @@ namespace Preguntame
             RandOptRight.UpdateLayout();
             OptionName.SelectedIndex = (int)Data.settings.rAnsMode;
             OptionName.UpdateLayout();
+            foreach(KeyValuePair<string,bool> t in Data.settings.themeSelection)
+            {
+                CheckBox c = new CheckBox();
+                c.Content = "[" + t.Key + "] - "+ SubTheme.GetThemeName(t.Key);
+                c.IsChecked = t.Value;
+                ThemeSelection.Children.Add(c);
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -91,11 +98,21 @@ namespace Preguntame
             OptRight.Opacity = .5;
         }
 
-
         private void RandOptRight_Unchecked_1(object sender, RoutedEventArgs e)
         {
             OptRight.IsReadOnly = false;
             OptRight.Opacity = 1;
+        }
+
+        private void SaveThemesSelection_Click(object sender, RoutedEventArgs e)
+        {
+            Dictionary<string, bool> changes = new Dictionary<string, bool>();
+            foreach (CheckBox c in ThemeSelection.Children.OfType<CheckBox>())
+            {
+                changes.Add(c.Content.ToString(), (bool) c.IsChecked);
+            }
+            Data.settings.ChangeThemeSelection(changes);
+            Close();
         }
     }
 }

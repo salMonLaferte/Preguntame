@@ -4,26 +4,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace Preguntame
 {
     public static class Data
     {
-        static List<SubTheme> themes = new List<SubTheme>();
+        static Dictionary<string,SubTheme> themes = new Dictionary<string,SubTheme>();
+        static List<SubTheme> themeTree = new List<SubTheme>();
         static List<Question> questionlist = new List<Question>();
+        static List<Question> availableQuestions = new List<Question>();
+        static Dictionary<string, string> themesNames = new Dictionary<string, string>();
+
         static int cntSesionRightAns = 0;
         static int cntSesionWrongAns = 0;
-        static int questionCount = 0;
-
 
         public static Settings settings = new Settings();
 
-        public static void AddTheme(string parentTAG, string name, string TAG)
+        public static void AddTheme(string parentTAG, string TAG)
         {
+            if (themes.ContainsKey(TAG))
+                return;
+            SubTheme n = new SubTheme(TAG);
+            themes.Add(TAG, n);
             if (parentTAG == "")
-                themes.Add(new SubTheme(name, TAG));
-            SubTheme n = new SubTheme(name, TAG);
-            foreach (SubTheme t in themes)
+            {
+                themeTree.Add(n);
+                return;
+            }
+            foreach (SubTheme t in themeTree)
             {
                 SubTheme parent = t.GetChildWithTAG(TAG);
                 if (parent != null)
@@ -32,34 +41,31 @@ namespace Preguntame
                     return;
                 }
             }
-            themes.Add(n);
         }
 
         public static void AddQuestion(Question q)
         {
-            foreach (SubTheme t in themes)
-            {
-                SubTheme parent = t.GetChildWithTAG(q.TAG);
-                if (parent != null)
-                {
-                    parent.AddQuestion(q);
-                    questionCount++;
-                    questionlist.Add(q);
-                    questionCount++;
-                    return;
-                }
-            }
-            AddTheme("", "Tema " + themes.Count.ToString(), q.TAG);
+            if (!themes.ContainsKey(q.TAG))
+                AddTheme("", q.TAG);
+            else
+                themes[q.TAG].plusQuestion();
             questionlist.Add(q);
-            questionCount++;
         }
 
         public static void ReadData()
         {
-            string text = System.IO.File.ReadAllText(System.AppDomain.CurrentDomain.BaseDirectory + "\\pregu.txt");
+            string text = "";
+            string[] files = System.IO.Directory.GetFiles(System.AppDomain.CurrentDomain.BaseDirectory + "\\pregu", "*.txt", System.IO.SearchOption.TopDirectoryOnly);
+            for (int i = 0; i < files.Length; i++)
+            {
+                if ( !files[i].Contains("names.txt"))
+                    text += System.IO.File.ReadAllText(files[i]);
+            }
             int f = 0;
             while (f < text.Length)
             {
+                bool error = false;
+
                 //Get the indexes where the data from the current questions begins and ends
                 int s = text.IndexOf('{', f);
                 if (s < 0)
@@ -69,28 +75,67 @@ namespace Preguntame
                 //Get the text part from the question
                 int start_p = text.IndexOf('[', s) + 1;
                 int end_p = text.IndexOf(']', s);
-                string texto = text.Substring(start_p, end_p - start_p);
+                string texto = "";
+                string[] rightOptions = { };
+                string[] wrongOptions = { };
+                string theme = "";
+
+                if (start_p > f || end_p > f)
+                    error = true;
+                else
+                    texto = text.Substring(start_p, end_p - start_p);
+
 
                 //Get an array of the correct answers
-                start_p = text.IndexOf('[', end_p) + 1;
-                end_p = text.IndexOf(']', start_p);
-                string rightOpStr = text.Substring(start_p, end_p - start_p);
-                string[] rightOptions = rightOpStr.Split('|');
+                if (!error)
+                {
+                    start_p = text.IndexOf('[', end_p) + 1;
+                    end_p = text.IndexOf(']', start_p);
+                    if (start_p > f || end_p > f)
+                        error = true;
+                    else
+                    {
+                        string rightOpStr = text.Substring(start_p, end_p - start_p);
+                        rightOptions = rightOpStr.Split('|');
+                    }
+                }
 
                 //Get an array of the wrong answers
-                start_p = text.IndexOf('[', end_p) + 1;
-                end_p = text.IndexOf(']', start_p);
-                string wrongOpStr = text.Substring(start_p, end_p - start_p);
-                string[] wrongOptions = wrongOpStr.Split('|');
+                if (!error)
+                {
+                    start_p = text.IndexOf('[', end_p) + 1;
+                    end_p = text.IndexOf(']', start_p);
+                    if (start_p > f || end_p > f)
+                        error = true;
+                    else
+                    {
+                        string wrongOpStr = text.Substring(start_p, end_p - start_p);
+                        wrongOptions = wrongOpStr.Split('|');
+                    }
+
+                }
 
                 //Get the TAG of the question
-                start_p = text.IndexOf('[', end_p) + 1;
-                end_p = text.IndexOf(']', start_p);
-                string theme = text.Substring(start_p, end_p - start_p);
+                if (!error)
+                {
+                    start_p = text.IndexOf('[', end_p) + 1;
+                    end_p = text.IndexOf(']', start_p);
+                    if (start_p > f || end_p > f)
+                        error = true;
+                    else
+                    {
+                        theme = text.Substring(start_p, end_p - start_p);
+                    }
+                }
+
 
                 //Cronstuct the question
-                Question pr = new Question(texto, wrongOptions, rightOptions, theme);
-                Data.AddQuestion(pr);
+                if (!error)
+                {
+                    Question pr = new Question(texto, wrongOptions, rightOptions, theme);
+                    Data.AddQuestion(pr);
+                }
+
             }
         }
 
@@ -106,7 +151,9 @@ namespace Preguntame
         public static Question GetQuestion()
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
-            return questionlist[rand.Next(questionlist.Count)];
+            if (availableQuestions.Count > 0)
+                return availableQuestions[rand.Next(availableQuestions.Count)];
+            return null;
         }
 
         public static void WriteSettings()
@@ -130,6 +177,60 @@ namespace Preguntame
         {
             return "Sesion actual:    Aciertos = " + cntSesionRightAns.ToString() + "   |    Errores = " + cntSesionWrongAns.ToString();
         }
+
+        public static void WriteNames()
+        {
+            string names =  JsonSerializer.Serialize(themesNames);
+            System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\names.txt", names);
+        }
+
+        public static void ReadNames()
+        {
+            if(System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\names.txt"))
+            {
+                string names = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\names.txt");
+                themesNames = JsonSerializer.Deserialize<Dictionary<string, string>>(names);
+            }
+            else
+            {
+                foreach(KeyValuePair<string, SubTheme> t in themes)
+                {
+                    themesNames.Add(t.Key, t.Key);
+                }
+                WriteNames();
+            }
+        }
+
+        public static void Initialize()
+        {
+            ReadSettings();
+            ReadData();
+            ReadNames();
+            SelectAllAvailableQuestions();
+        }
+
+        public static void SelectAllAvailableQuestions() {
+            availableQuestions.Clear();
+            foreach (KeyValuePair<string,bool> t in settings.themeSelection)
+            {
+                if (t.Value)
+                {
+                    foreach (Question q in questionlist)
+                    {
+                        if (q.TAG == t.Key)
+                        {
+                            availableQuestions.Add(q);
+                        }
+                    }
+                }
+                
+            }
+        }
         
+        public static string GetThemeName(string TAG)
+        {
+            return themesNames[TAG];
+        }
+
     }
 }

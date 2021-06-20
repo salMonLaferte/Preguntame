@@ -8,28 +8,33 @@ namespace Preguntame
 {
     public class SubTheme
     {
-        List<Question> questions;
         List<SubTheme> children;
         String name;
         String TAG;
-        int index;
+        int questionFreq;
 
         public SubTheme()
         {
-            questions = new List<Question>();
             children = new List<SubTheme>();
             name = "unknown";
             TAG = "NOT";
-            index = 1;
+            questionFreq = 1;
         }
 
-        public SubTheme(string name, string TAG)
+        public SubTheme( string TAG)
         {
-            questions = new List<Question>();
+            children = new List<SubTheme>();
+            name = TAG;
+            this.TAG = TAG;
+            questionFreq = 1;
+        }
+
+        public SubTheme(string TAG, string name)
+        {
             children = new List<SubTheme>();
             this.name = name;
             this.TAG = TAG;
-            this.index = 1;
+            questionFreq = 1;
         }
 
         public String getName()
@@ -54,13 +59,12 @@ namespace Preguntame
                         return true;
                 }
             }
-            return false;   
+            return false;
         }
 
         public void addChild(SubTheme t) 
         {
             children.Add(t);
-            t.index = children.Count;
         }
 
         public SubTheme GetChildWithTAG( string TAG)
@@ -79,10 +83,19 @@ namespace Preguntame
             return null;
         }
 
-        public void AddQuestion(Question q)
+        public void setName(string name)
         {
-            questions.Add(q);
+            this.name = name;
         }
 
+        public void plusQuestion()
+        {
+            questionFreq++;
+        }
+
+        public static string GetThemeName(string TAG)
+        {
+            return Data.GetThemeName(TAG);
+        }
     }
 }

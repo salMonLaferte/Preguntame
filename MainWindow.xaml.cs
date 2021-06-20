@@ -28,19 +28,17 @@ namespace Preguntame
         public MainWindow()
         {
             Dictionary<String, List<Question>> materias = new Dictionary<string, List<Question>>();
-            Data.ReadData();
-            Data.ReadSettings();
+            Data.Initialize();
             InitializeComponent();
-            
         }
 
         private void Pregunta_Click(object sender, RoutedEventArgs e)
         {
             if(qButtonState == QButtonState.GetQuestion)
             {
-                DisplayQuestion();
                 qButtonState = QButtonState.VerifyQuestion;
                 Pregunta.Content = "Revisar respuesta";
+                DisplayQuestion();
                 return;
             }
             if(qButtonState == QButtonState.VerifyQuestion)
@@ -94,7 +92,6 @@ namespace Preguntame
                     op.Key.Foreground = Brushes.Red;
             }
             string textToShow = "";
-
             if (Data.settings.rAnsMode == Settings.RightAnswerMode.MarkAll)
             {
                 if(wrongOnes.Count == 0)
@@ -104,8 +101,7 @@ namespace Preguntame
                     {
                         textToShow += op.Content + "\n";
                     }
-                    QuestionAnswered(true);
-                    QuestionText.Text = textToShow;
+                    DisplayAnswerEvaluation(textToShow, true);
                     return;
                 }
             }
@@ -127,8 +123,7 @@ namespace Preguntame
                     {
                         textToShow += b.Content + "\n";
                     }
-                    QuestionAnswered(true);
-                    QuestionText.Text = textToShow;
+                    DisplayAnswerEvaluation(textToShow, false);
                     return;
                 }
             }
@@ -137,13 +132,13 @@ namespace Preguntame
                 if(wrongOnes.Count == 0)
                 {
                     textToShow += "Respuesta correcta, todas las opciones eran incorrectas.";
-                    QuestionAnswered(true);
-                    
+                    DisplayAnswerEvaluation(textToShow, true);
+
                 }
                 else
                 {
                     textToShow += "Respuesta incorrecta, todas las opciones eran incorrectas.";
-                    QuestionAnswered(false);
+                    DisplayAnswerEvaluation(textToShow, false);
                 }
                 QuestionText.Text = textToShow;
                 return;
@@ -157,9 +152,17 @@ namespace Preguntame
             {
                 textToShow += op.Content + "\n";
             }
-            QuestionAnswered(false);
-            QuestionText.Text = textToShow;
+            DisplayAnswerEvaluation(textToShow, false);
+        }
 
+        private void DisplayAnswerEvaluation(string message, bool isRight)
+        {
+            QuestionAnswered(isRight);
+            QuestionText.Text = message;
+            if (isRight)
+                QuestionText.Foreground = Brushes.Green;
+            else
+                QuestionText.Foreground = Brushes.Red;
         }
 
         private void QuestionAnswered(bool isRight)
@@ -170,7 +173,15 @@ namespace Preguntame
 
         private void DisplayQuestion()
         {
+            QuestionText.Foreground = Brushes.Black;
             Question q = Data.GetQuestion();
+            if(q == null)
+            {
+                QuestionText.Text = "No hay más preguntas que mostrar de acuerdo a los parametros seleccionados.";
+                qButtonState = QButtonState.GetQuestion;
+                Pregunta.Content = "Siguiente pregunta";
+                return;
+            }
             List<QuestionOption> options = q.GenerateAndGetListOfOptions(Data.settings.rightOptions, Data.settings.totalOptions);
             QuestionText.Text = q.GetQuestionText();
             OptionsPanel.Children.Clear();

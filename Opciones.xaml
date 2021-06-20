@@ -10,7 +10,11 @@
         <TabControl>
             <TabItem Name="QuestionTab" Header="Preguntas" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid>
-                    <ListBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="435">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="125*"/>
+                        <ColumnDefinition Width="313*"/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="435" Grid.ColumnSpan="2">
                         <ListBoxItem HorizontalAlignment="Left" VerticalAlignment="Top">
                             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Width="400">
                                 Modo de respuesta valida:
@@ -42,14 +46,23 @@
                             <CheckBox Name="RandOptRight" Checked="RandOptRight_Checked" Unchecked="RandOptRight_Unchecked_1">Número aleatorio de opciones correctas.</CheckBox>
                         </ListBoxItem>
                         <Separator></Separator>
-                        
+
                     </ListBox>
-                    <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="20" Click="Save_Click">Guardar</Button>
+                    <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="0,0,20,20" Click="Save_Click" Grid.Column="1">Guardar</Button>
                     <TextBlock Name="ErrorSaving" FontWeight="Bold" TextWrapping="WrapWithOverflow" MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                      Margin="20,150"></TextBlock>
+                      Margin="20,0,0,150"></TextBlock>
                 </Grid>
             </TabItem>
+            <TabItem  Header="Selección de temas">
+                <Grid>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">Marque los temas de los cuales quiere responder preguntas.</TextBlock>
+                    <StackPanel Name="ThemeSelection" Margin="0,40">
+                    </StackPanel>
+                    <Button Name="SaveThemesSelection" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SaveThemesSelection_Click">Save</Button>
+                </Grid>
 
+            </TabItem>
         </TabControl>
+
     </Grid>
 </Window>

@@ -1,0 +1,8 @@
+{"QUI":"Quimica",
+"CV":"Comunicación verbal",
+"BIO":"Biología",
+"HM":"Historia de México",
+"HU":"Historia Universal",
+"GEO":"Geografía",
+"LIT":"Literatura",
+"FIS":"Fisica"}

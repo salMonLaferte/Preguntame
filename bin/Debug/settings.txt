@@ -1,6 +1,16 @@
 {
-  "totalOptions": 8,
-  "rightOptions": 3,
+  "totalOptions": 4,
+  "rightOptions": 1,
   "randRightOptions": false,
-  "rAnsMode": 1
+  "rAnsMode": 0,
+  "themeSelection": {
+    "QUI": true,
+    "CV": true,
+    "BIO": true,
+    "HM": true,
+    "HU": true,
+    "GEO": true,
+    "LIT": true,
+    "FIS": true
+  }
 }

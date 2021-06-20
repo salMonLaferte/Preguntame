@@ -32,6 +32,7 @@
                 VerticalAlignment="Bottom" HorizontalAlignment="Right"
                 Margin="20" >Opciones</Button>
             <TextBlock Name="Status" Margin="20" Width="250" FontSize="12"></TextBlock>
+            
         </WrapPanel>
 
 
