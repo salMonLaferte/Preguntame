@@ -4,13 +4,7 @@
   "randRightOptions": false,
   "rAnsMode": 0,
   "themeSelection": {
-    "QUI": true,
-    "CV": true,
-    "BIO": true,
-    "HM": true,
-    "HU": true,
-    "GEO": true,
-    "LIT": true,
-    "FIS": true
-  }
+    "QUI": true
+  },
+  "dontRepeatQuestions": false
 }

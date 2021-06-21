@@ -10,10 +10,14 @@ namespace Preguntame
     {
         private string content;
         private bool isRight;
-        public QuestionOption(bool isRight, string content)
+        private string img;
+
+
+        public QuestionOption(bool isRight, string content, string img="")
         {
             this.content = content;
             this.isRight = isRight;
+            this.img = img;
         }
 
         /// <summary>
@@ -33,5 +37,11 @@ namespace Preguntame
         {
             return isRight;
         }
+
+        public string GetImgName()
+        {
+            return img;
+        }
+
     }
 }

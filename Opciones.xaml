@@ -46,6 +46,9 @@
                             <CheckBox Name="RandOptRight" Checked="RandOptRight_Checked" Unchecked="RandOptRight_Unchecked_1">Número aleatorio de opciones correctas.</CheckBox>
                         </ListBoxItem>
                         <Separator></Separator>
+                        <ListBoxItem>
+                            <CheckBox Name="DontRepeatQuestion" >No repetir preguntas.</CheckBox>
+                        </ListBoxItem>
 
                     </ListBox>
                     <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="0,0,20,20" Click="Save_Click" Grid.Column="1">Guardar</Button>

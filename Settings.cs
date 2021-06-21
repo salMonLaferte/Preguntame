@@ -15,6 +15,7 @@ namespace Preguntame
         public bool randRightOptions;
         public RightAnswerMode rAnsMode = RightAnswerMode.MarkAll;
         public Dictionary<string, bool> themeSelection;
+        public bool dontRepeatQuestions;
 
         public static string optionCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -25,6 +26,23 @@ namespace Preguntame
             randRightOptions = false;
             rAnsMode = RightAnswerMode.MarkAll;
             themeSelection = new Dictionary<string, bool>();
+            dontRepeatQuestions = true;
+        }
+
+        public void DeleteUnusedThemeKeys   ()
+        {
+            List<string> toRemove = new List<string>();
+            foreach(KeyValuePair<string, bool> t in themeSelection)
+            {
+                if (!Data.GetThemes().ContainsKey(t.Key))
+                {
+                    toRemove.Add(t.Key);
+                }
+            }
+            foreach(string s in toRemove)
+            {
+                themeSelection.Remove(s);
+            }
         }
 
         public char GetCharacterForOption(int num)
@@ -32,13 +50,17 @@ namespace Preguntame
             return optionCharacters[num];
         }
 
-        public void ChangeSettings( int totalOptions = 4, int rightAnswers = 1,
-            bool randRightAnswers = false, RightAnswerMode rAnsMode = RightAnswerMode.MarkAll)
+        public void ChangeSettings(int totalOptions = 4, int rightAnswers = 1,
+            bool randRightAnswers = false, RightAnswerMode rAnsMode = RightAnswerMode.MarkAll, bool dontRepeatQuestions = true)
         {
             this.totalOptions = totalOptions;
             this.rightOptions = rightAnswers;
             this.randRightOptions = randRightAnswers;
             this.rAnsMode = rAnsMode;
+            if (this.dontRepeatQuestions && !dontRepeatQuestions)
+                Data.SelectAllAvailableQuestions();
+            this.dontRepeatQuestions = dontRepeatQuestions;
+            Data.WriteSettings();
         }
 
         public enum RightAnswerMode

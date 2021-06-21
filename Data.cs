@@ -78,26 +78,23 @@ namespace Preguntame
                 string texto = "";
                 string[] rightOptions = { };
                 string[] wrongOptions = { };
+                string[] imgRight = { };
+                string[] imgWrong = { };
                 string theme = "";
+                string img = "";
 
                 if (start_p > f || end_p > f)
                     error = true;
                 else
-                    texto = text.Substring(start_p, end_p - start_p);
-
-
-                //Get an array of the correct answers
-                if (!error)
                 {
-                    start_p = text.IndexOf('[', end_p) + 1;
-                    end_p = text.IndexOf(']', start_p);
-                    if (start_p > f || end_p > f)
-                        error = true;
-                    else
+                    texto = text.Substring(start_p, end_p - start_p);
+                    string[] p = texto.Split('&');
+                    if (p.Length > 1)
                     {
-                        string rightOpStr = text.Substring(start_p, end_p - start_p);
-                        rightOptions = rightOpStr.Split('|');
+                        texto = p[0];
+                        img = p[1];
                     }
+                        
                 }
 
                 //Get an array of the wrong answers
@@ -111,8 +108,52 @@ namespace Preguntame
                     {
                         string wrongOpStr = text.Substring(start_p, end_p - start_p);
                         wrongOptions = wrongOpStr.Split('|');
+                        imgWrong = new string[wrongOptions.Length];
+                        for(int i=0; i<wrongOptions.Length; i++)
+                        {
+                            string[] aux = wrongOptions[i].Split('&');
+                            if(aux.Length > 1)
+                            {
+                                wrongOptions[i] = aux[0];
+                                imgWrong[i] = aux[1];
+                            }
+                            else
+                            {
+                                wrongOptions[i] = aux[0];
+                                imgWrong[i] = "";
+                            }
+                        }
                     }
+                }
 
+                //Get an array of the correct answers
+                if (!error)
+                {
+                    start_p = text.IndexOf('[', end_p) + 1;
+                    end_p = text.IndexOf(']', start_p);
+                    if (start_p > f || end_p > f)
+                        error = true;
+                    else
+                    {
+                        string rightOpStr = text.Substring(start_p, end_p - start_p);
+                        rightOptions = rightOpStr.Split('|');
+                        imgRight = new string[rightOptions.Length];
+                        for (int i = 0; i < rightOptions.Length; i++)
+                        {
+                            string[] aux = rightOptions[i].Split('&');
+                            if (aux.Length > 1)
+                            {
+                                rightOptions[i] = aux[0];
+                                imgRight[i] = aux[1];
+                            }
+                            else
+                            {
+                                rightOptions[i] = aux[0];
+                                imgRight[i] = "";
+                            }
+
+                        }
+                    }
                 }
 
                 //Get the TAG of the question
@@ -132,7 +173,7 @@ namespace Preguntame
                 //Cronstuct the question
                 if (!error)
                 {
-                    Question pr = new Question(texto, wrongOptions, rightOptions, theme);
+                    Question pr = new Question(texto,  rightOptions, wrongOptions, theme, img, imgWrong, imgRight);
                     Data.AddQuestion(pr);
                 }
 
@@ -152,7 +193,14 @@ namespace Preguntame
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
             if (availableQuestions.Count > 0)
-                return availableQuestions[rand.Next(availableQuestions.Count)];
+            {
+                int r = rand.Next(availableQuestions.Count);
+                Question q = availableQuestions[r];
+                if(settings.dontRepeatQuestions)
+                    availableQuestions.RemoveAt(r);
+                return q;
+            }
+                
             return null;
         }
 
@@ -175,7 +223,10 @@ namespace Preguntame
 
         public static string GetSesionInfo()
         {
-            return "Sesion actual:    Aciertos = " + cntSesionRightAns.ToString() + "   |    Errores = " + cntSesionWrongAns.ToString();
+            string s = "Sesion actual:    Aciertos = " + cntSesionRightAns.ToString() + "   |    Errores = " + cntSesionWrongAns.ToString();
+            if (settings.dontRepeatQuestions)
+                s += "    |     Preguntas restantes = " + availableQuestions.Count.ToString();
+            return s;
         }
 
         public static void WriteNames()
@@ -207,6 +258,7 @@ namespace Preguntame
             ReadData();
             ReadNames();
             SelectAllAvailableQuestions();
+            settings.DeleteUnusedThemeKeys();
         }
 
         public static void SelectAllAvailableQuestions() {
@@ -230,6 +282,11 @@ namespace Preguntame
         public static string GetThemeName(string TAG)
         {
             return themesNames[TAG];
+        }
+
+        public static Dictionary<string, SubTheme> GetThemes()
+        {
+            return themes;
         }
 
     }

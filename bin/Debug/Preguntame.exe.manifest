@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Preguntame.exe" size="439728">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Preguntame.exe" size="487344">
       <assemblyIdentity name="Preguntame" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fdqf9Tm70fMc7Ym2bLnRBD2bXP6AyKIE+pIMNNAnUhg=</dsig:DigestValue>
+        <dsig:DigestValue>UBGdTaKiK9vHg2kcVTZB6EJOAbrAXrb4PbCCC4aiUKc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

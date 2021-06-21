@@ -179,11 +179,27 @@ namespace Preguntame
             {
                 QuestionText.Text = "No hay más preguntas que mostrar de acuerdo a los parametros seleccionados.";
                 qButtonState = QButtonState.GetQuestion;
-                Pregunta.Content = "Siguiente pregunta";
+                Pregunta.Content = "Sesión finalizada";
+                OptionsPanel.Children.Clear();
                 return;
             }
             List<QuestionOption> options = q.GenerateAndGetListOfOptions(Data.settings.rightOptions, Data.settings.totalOptions);
             QuestionText.Text = q.GetQuestionText();
+            string imgName = q.GetImageName();
+            if(imgName != "" && System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\" + imgName))
+            {
+                QuestionText.ContentEnd.InsertLineBreak();
+                QuestionText.ContentEnd.InsertLineBreak();
+                Image img = new Image();
+                img.Height = 200;
+                BitmapImage bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\" + imgName);
+                bitmapImage.DecodePixelHeight = 200;
+                bitmapImage.EndInit();
+                img.Source = bitmapImage;
+                InlineUIContainer uIContainer = new InlineUIContainer(img, QuestionText.ContentEnd);
+            }
             OptionsPanel.Children.Clear();
             optionsBoxes.Clear();
             for (int i = 0; i < options.Count; i++)
@@ -197,6 +213,23 @@ namespace Preguntame
                 Thickness t = new Thickness(60, 20, 0, 0);
                 box.Margin = t;
                 OptionsPanel.Children.Add(box);
+                if (q.GetImageName() != "" && System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\" + options[i].GetImgName()))
+                {
+                    Image img = new Image();
+                    img.Width = 100;
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\" + options[i].GetImgName());
+                    bitmap.DecodePixelWidth = 100;
+                    bitmap.EndInit();
+                    img.Source = bitmap;
+                    OptionsPanel.Children.Add(img);
+                    img.HorizontalAlignment = HorizontalAlignment.Left;
+                    img.VerticalAlignment = VerticalAlignment.Top;
+                    img.Margin = t;
+                }
+
+
                 optionsBoxes.Add(box, options[i].IsRight());
                
             }

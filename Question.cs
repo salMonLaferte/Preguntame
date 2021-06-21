@@ -11,11 +11,12 @@ namespace Preguntame
     public class Question
     {
         [JsonInclude]
+        string imgName;
         string question;
         string[] optionsRight;
         string[] optionsWrong;
-        bool questionIsCorrupted;
-        bool appearedInThisSession = false; 
+        string[] imgRight;
+        string[] imgWrong;
 
         /// <summary>
         /// A list of options for the question with a determined number of right and wrong answers, has to be set with the
@@ -35,17 +36,17 @@ namespace Preguntame
         /// <param name="optionsRight">correct options for the questions</param>
         /// <param name="optionsWrong">wrong options for the question</param>
         /// <param name="TAG"></param>
-        public Question(string question = "", string[] optionsRight = null, string[] optionsWrong = null, string TAG = "default")
+        public Question(string question = "", string[] optionsRight = null, string[] optionsWrong = null, string TAG = "default",
+            string imgName = "", string[] imgWrong = null, string[] imgRight = null )
         {
             qOption = new List<QuestionOption>();
             this.question = question;
             this.optionsRight = optionsRight;
             this.optionsWrong = optionsWrong;
+            this.imgRight = imgRight;
+            this.imgWrong = imgWrong;
             this.TAG = TAG;
-            if (optionsRight.Length == 0)
-            {
-                this.questionIsCorrupted = false;
-            }
+            this.imgName = imgName;
         }
         
         /// <summary>
@@ -74,14 +75,14 @@ namespace Preguntame
             while(rlist.Count > 0 && auxOption.Count < rightOptions)
             {
                 int index = rand.Next(rlist.Count);
-                auxOption.Add(new QuestionOption(true, rlist[index]));
+                auxOption.Add(new QuestionOption(true, rlist[index], imgRight[index]));
                 rlist.RemoveAt(index);
             }
             int wrongCounter = 0;
             while(wrongCounter < wrongOptions && wlist.Count > 0)
             {
                 int index = rand.Next(wlist.Count);
-                auxOption.Add(new QuestionOption(false, wlist[index]));
+                auxOption.Add(new QuestionOption(false, wlist[index], imgWrong[index]));
                 wlist.RemoveAt(index);
                 wrongCounter++;
             }
@@ -138,5 +139,10 @@ namespace Preguntame
             return qOption;
         }
 
+
+        public string GetImageName()
+        {
+            return imgName;
+        }
     }
 }

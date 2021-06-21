@@ -33,6 +33,7 @@ namespace Preguntame
             RandOptRight.UpdateLayout();
             OptionName.SelectedIndex = (int)Data.settings.rAnsMode;
             OptionName.UpdateLayout();
+            DontRepeatQuestion.IsChecked = Data.settings.dontRepeatQuestions;
             foreach(KeyValuePair<string,bool> t in Data.settings.themeSelection)
             {
                 CheckBox c = new CheckBox();
@@ -69,8 +70,8 @@ namespace Preguntame
                         if (totalOp - rightOpt < 0)
                             return "El numero de opciones totales no puede ser mayor que el numero de opciones correctas";
                         else {
-                            Data.settings.ChangeSettings(totalOp, rightOpt, (bool)RandOptRight.IsChecked, (Settings.RightAnswerMode)OptionName.SelectedIndex);
-                            Data.WriteSettings();
+                            Data.settings.ChangeSettings(totalOp, rightOpt, (bool)RandOptRight.IsChecked, (Settings.RightAnswerMode)OptionName.SelectedIndex, (bool)DontRepeatQuestion.IsChecked);
+                            
                         }
                        
                     }
@@ -114,5 +115,7 @@ namespace Preguntame
             Data.settings.ChangeThemeSelection(changes);
             Close();
         }
+
+
     }
 }
