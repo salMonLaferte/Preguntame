@@ -70,20 +70,24 @@ namespace Preguntame
             
             List<string> rlist = optionsRight.ToList<string>();
             List<string> wlist = optionsWrong.ToList<string>();
+            List<string> imgrlist = imgRight.ToList<string>();
+            List<string> imgwlist = imgWrong.ToList<string>();
             qOption.Clear();
             List<QuestionOption> auxOption = new List<QuestionOption>();
             while(rlist.Count > 0 && auxOption.Count < rightOptions)
             {
                 int index = rand.Next(rlist.Count);
-                auxOption.Add(new QuestionOption(true, rlist[index], imgRight[index]));
+                auxOption.Add(new QuestionOption(true, rlist[index], imgrlist[index]));
                 rlist.RemoveAt(index);
+                imgrlist.RemoveAt(index);
             }
             int wrongCounter = 0;
             while(wrongCounter < wrongOptions && wlist.Count > 0)
             {
                 int index = rand.Next(wlist.Count);
-                auxOption.Add(new QuestionOption(false, wlist[index], imgWrong[index]));
+                auxOption.Add(new QuestionOption(false, wlist[index], imgwlist[index]));
                 wlist.RemoveAt(index);
+                imgwlist.RemoveAt(index);
                 wrongCounter++;
             }
             while(auxOption.Count > 0)

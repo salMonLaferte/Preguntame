@@ -10,6 +10,10 @@
         <TabControl>
             <TabItem Name="QuestionTab" Header="Preguntas" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="350*"/>
+                        <RowDefinition Height="53*"/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="125*"/>
                         <ColumnDefinition Width="313*"/>
@@ -17,7 +21,7 @@
                     <ListBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="435" Grid.ColumnSpan="2">
                         <ListBoxItem HorizontalAlignment="Left" VerticalAlignment="Top">
                             <Label HorizontalAlignment="Left" VerticalAlignment="Top" Width="400">
-                                Modo de respuesta valida:
+                                Modo de respuesta válida:
                             </Label>
                         </ListBoxItem>
                         <ListBoxItem>
@@ -46,22 +50,36 @@
                             <CheckBox Name="RandOptRight" Checked="RandOptRight_Checked" Unchecked="RandOptRight_Unchecked_1">Número aleatorio de opciones correctas.</CheckBox>
                         </ListBoxItem>
                         <Separator></Separator>
+                        <ListBoxItem HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Label HorizontalAlignment="Left" VerticalAlignment="Top" Width="400">
+                                Repetir preguntas:
+                            </Label>
+                        </ListBoxItem>
                         <ListBoxItem>
-                            <CheckBox Name="DontRepeatQuestion" >No repetir preguntas.</CheckBox>
+                            <ComboBox Name="RepeatMode"  HorizontalAlignment="Right" VerticalAlignment="Top">
+                                <ComboBoxItem>No</ComboBoxItem>
+                                <ComboBoxItem>Sólo las respondidas incorrectamente</ComboBoxItem>
+                                <ComboBoxItem>Todas las preguntas se pueden repetir</ComboBoxItem>
+                            </ComboBox>
                         </ListBoxItem>
 
                     </ListBox>
-                    <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="0,0,20,20" Click="Save_Click" Grid.Column="1">Guardar</Button>
-                    <TextBlock Name="ErrorSaving" FontWeight="Bold" TextWrapping="WrapWithOverflow" MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Left"
-                      Margin="20,0,0,150"></TextBlock>
+                    <Button Name="Save" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="0,0,20,20" Click="Save_Click" Grid.Column="1" Grid.Row="1">Guardar</Button>
+                    <TextBlock Name="ErrorSaving" FontWeight="Bold"  MaxWidth="300" VerticalAlignment="Bottom" HorizontalAlignment="Left" TextWrapping="WrapWithOverflow"
+                      Margin="20,100,0,0"></TextBlock>
                 </Grid>
             </TabItem>
             <TabItem  Header="Selección de temas">
                 <Grid>
-                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top">Marque los temas de los cuales quiere responder preguntas.</TextBlock>
-                    <StackPanel Name="ThemeSelection" Margin="0,40">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*"/>
+                        <ColumnDefinition Width="22*"/>
+                        <ColumnDefinition Width="401*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3">Marque los temas de los cuales quiere responder preguntas.</TextBlock>
+                    <StackPanel Name="ThemeSelection" Margin="0,40" Grid.ColumnSpan="3">
                     </StackPanel>
-                    <Button Name="SaveThemesSelection" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="20" Click="SaveThemesSelection_Click">Save</Button>
+                    <Button Name="SaveThemesSelection" Width="100" Height="20" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,20,20" Click="SaveThemesSelection_Click" Grid.Column="2">Save</Button>
                 </Grid>
 
             </TabItem>

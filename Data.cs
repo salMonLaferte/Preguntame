@@ -15,7 +15,7 @@ namespace Preguntame
         static List<Question> questionlist = new List<Question>();
         static List<Question> availableQuestions = new List<Question>();
         static Dictionary<string, string> themesNames = new Dictionary<string, string>();
-
+        static int cntQIndex = 0;
         static int cntSesionRightAns = 0;
         static int cntSesionWrongAns = 0;
 
@@ -27,6 +27,10 @@ namespace Preguntame
                 return;
             SubTheme n = new SubTheme(TAG);
             themes.Add(TAG, n);
+            if(!themesNames.ContainsKey(TAG))
+                themesNames.Add(TAG, TAG);
+            if (!settings.themeSelection.ContainsKey(TAG))
+                settings.themeSelection.Add(TAG, false);
             if (parentTAG == "")
             {
                 themeTree.Add(n);
@@ -182,6 +186,9 @@ namespace Preguntame
 
         public static void QuestionAnswered(bool isRight)
         {
+            if (settings.repeatQuestions == Settings.RepeatQuestions.No
+                || settings.repeatQuestions == Settings.RepeatQuestions.SoloRespondidasMal && isRight)
+                availableQuestions.RemoveAt(cntQIndex);
             if (isRight)
                 cntSesionRightAns++;
             else
@@ -196,11 +203,9 @@ namespace Preguntame
             {
                 int r = rand.Next(availableQuestions.Count);
                 Question q = availableQuestions[r];
-                if(settings.dontRepeatQuestions)
-                    availableQuestions.RemoveAt(r);
+                cntQIndex = r;
                 return q;
             }
-                
             return null;
         }
 
@@ -224,7 +229,7 @@ namespace Preguntame
         public static string GetSesionInfo()
         {
             string s = "Sesion actual:    Aciertos = " + cntSesionRightAns.ToString() + "   |    Errores = " + cntSesionWrongAns.ToString();
-            if (settings.dontRepeatQuestions)
+            if (settings.repeatQuestions == Settings.RepeatQuestions.No || settings.repeatQuestions == Settings.RepeatQuestions.SoloRespondidasMal)
                 s += "    |     Preguntas restantes = " + availableQuestions.Count.ToString();
             return s;
         }
@@ -255,10 +260,11 @@ namespace Preguntame
         public static void Initialize()
         {
             ReadSettings();
-            ReadData();
             ReadNames();
-            SelectAllAvailableQuestions();
+            ReadData();
             settings.DeleteUnusedThemeKeys();
+            SelectAllAvailableQuestions();
+            WriteSettings();
         }
 
         public static void SelectAllAvailableQuestions() {

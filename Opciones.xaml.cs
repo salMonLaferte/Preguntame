@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 
 namespace Preguntame
 {
+
+
     /// <summary>
     /// Lógica de interacción para Opciones.xaml
     /// </summary>
@@ -33,10 +35,11 @@ namespace Preguntame
             RandOptRight.UpdateLayout();
             OptionName.SelectedIndex = (int)Data.settings.rAnsMode;
             OptionName.UpdateLayout();
-            DontRepeatQuestion.IsChecked = Data.settings.dontRepeatQuestions;
+            RepeatMode.SelectedIndex = (int)Data.settings.repeatQuestions;
             foreach(KeyValuePair<string,bool> t in Data.settings.themeSelection)
             {
                 CheckBox c = new CheckBox();
+                c.Tag = t.Key;
                 c.Content = "[" + t.Key + "] - "+ SubTheme.GetThemeName(t.Key);
                 c.IsChecked = t.Value;
                 ThemeSelection.Children.Add(c);
@@ -59,7 +62,8 @@ namespace Preguntame
             int totalOp, rightOpt = 0;
             if (Int32.TryParse(TotalOpt.Text, out totalOp)       
                 && RandOptRight.IsChecked !=null
-                && OptionName.SelectedIndex !=-1)
+                && OptionName.SelectedIndex !=-1
+                && RepeatMode.SelectedIndex !=-1)
             {
                 if (totalOp > 0)
                 {
@@ -68,9 +72,9 @@ namespace Preguntame
                         if (rightOpt < 0)
                             rightOpt = 0;
                         if (totalOp - rightOpt < 0)
-                            return "El numero de opciones totales no puede ser mayor que el numero de opciones correctas";
+                            return "El número de opciones totales no puede ser mayor que el número de opciones correctas.";
                         else {
-                            Data.settings.ChangeSettings(totalOp, rightOpt, (bool)RandOptRight.IsChecked, (Settings.RightAnswerMode)OptionName.SelectedIndex, (bool)DontRepeatQuestion.IsChecked);
+                            Data.settings.ChangeSettings(totalOp, rightOpt, (bool)RandOptRight.IsChecked, (Settings.RightAnswerMode)OptionName.SelectedIndex, (Settings.RepeatQuestions)RepeatMode.SelectedIndex);
                             
                         }
                        
@@ -108,9 +112,9 @@ namespace Preguntame
         private void SaveThemesSelection_Click(object sender, RoutedEventArgs e)
         {
             Dictionary<string, bool> changes = new Dictionary<string, bool>();
-            foreach (CheckBox c in ThemeSelection.Children.OfType<CheckBox>())
+            foreach (CheckBox c in ThemeSelection.Children)
             {
-                changes.Add(c.Content.ToString(), (bool) c.IsChecked);
+                changes.Add(c.Tag.ToString(), (bool)c.IsChecked);
             }
             Data.settings.ChangeThemeSelection(changes);
             Close();

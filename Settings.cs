@@ -15,7 +15,8 @@ namespace Preguntame
         public bool randRightOptions;
         public RightAnswerMode rAnsMode = RightAnswerMode.MarkAll;
         public Dictionary<string, bool> themeSelection;
-        public bool dontRepeatQuestions;
+        //public bool dontRepeatQuestions;
+        public RepeatQuestions repeatQuestions = RepeatQuestions.No;
 
         public static string optionCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -26,7 +27,7 @@ namespace Preguntame
             randRightOptions = false;
             rAnsMode = RightAnswerMode.MarkAll;
             themeSelection = new Dictionary<string, bool>();
-            dontRepeatQuestions = true;
+            repeatQuestions = RepeatQuestions.No;
         }
 
         public void DeleteUnusedThemeKeys   ()
@@ -51,27 +52,22 @@ namespace Preguntame
         }
 
         public void ChangeSettings(int totalOptions = 4, int rightAnswers = 1,
-            bool randRightAnswers = false, RightAnswerMode rAnsMode = RightAnswerMode.MarkAll, bool dontRepeatQuestions = true)
+            bool randRightAnswers = false, RightAnswerMode rAnsMode = RightAnswerMode.MarkAll, RepeatQuestions repeat = RepeatQuestions.No)
         {
             this.totalOptions = totalOptions;
             this.rightOptions = rightAnswers;
             this.randRightOptions = randRightAnswers;
             this.rAnsMode = rAnsMode;
-            if (this.dontRepeatQuestions && !dontRepeatQuestions)
+            if (this.repeatQuestions == RepeatQuestions.No && repeat == RepeatQuestions.Si 
+                || this.repeatQuestions == RepeatQuestions.SoloRespondidasMal && repeat == RepeatQuestions.Si)
                 Data.SelectAllAvailableQuestions();
-            this.dontRepeatQuestions = dontRepeatQuestions;
+            this.repeatQuestions = repeat;
             Data.WriteSettings();
         }
 
-        public enum RightAnswerMode
+        public void ChangeThemeSelection(Dictionary<string, bool> changes)
         {
-            MarkAll = 0,
-            MarkOne = 1
-        }
-
-        public void ChangeThemeSelection(Dictionary<string,bool> changes)
-        {
-            foreach( KeyValuePair<string, bool> k in changes)
+            foreach (KeyValuePair<string, bool> k in changes)
             {
                 if (themeSelection.ContainsKey(k.Key))
                 {
@@ -82,5 +78,19 @@ namespace Preguntame
             Data.SelectAllAvailableQuestions();
 
         }
+
+        public enum RightAnswerMode
+        {
+            MarkAll = 0,
+            MarkOne = 1
+        }
+
+        public enum RepeatQuestions
+        {
+            No = 0,
+            SoloRespondidasMal = 1,
+            Si = 2
+        }
+
     }
 }

@@ -1,10 +1,12 @@
 {
-  "totalOptions": 4,
-  "rightOptions": 1,
+  "totalOptions": 5,
+  "rightOptions": 2,
   "randRightOptions": false,
   "rAnsMode": 0,
   "themeSelection": {
-    "QUI": true
+    "Tema": true,
+    "MAT": false,
+    "CONICAS": true
   },
-  "dontRepeatQuestions": false
+  "repeatQuestions": 2
 }

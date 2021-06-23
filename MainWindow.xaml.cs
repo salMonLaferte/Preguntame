@@ -24,6 +24,7 @@ namespace Preguntame
         static Dictionary<CheckBox, bool> optionsBoxes = new Dictionary<CheckBox, bool>();
         static QButtonState qButtonState = QButtonState.GetQuestion;
         Opciones optWindow;
+      
 
         public MainWindow()
         {
@@ -213,7 +214,7 @@ namespace Preguntame
                 Thickness t = new Thickness(60, 20, 0, 0);
                 box.Margin = t;
                 OptionsPanel.Children.Add(box);
-                if (q.GetImageName() != "" && System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\" + options[i].GetImgName()))
+                if (options[i].GetImgName() != "" && System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\" + options[i].GetImgName() ) )
                 {
                     Image img = new Image();
                     img.Width = 100;
