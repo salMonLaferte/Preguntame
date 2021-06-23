@@ -182,4 +182,7 @@ Podemos editar el archivo names.txt dentro de la carpeta “"pregu"  para que nu
 
 Nótese que la última línea no lleva una coma.
 
-
+## Sugerencia de uso
+En lo personal, desarrollé preguntame para facilitar la memorización en ciertos temas de geografía, biólogía e historia al prepararme para un par de examenes de admisión a la universidad ( específicamente la UAM y la UNAM, ubicadas en CDMX, México). Formular preguntas para responder uno mismo es una actividad que puede facilitar la comprensión, como lo es hacer un resumen o subrayar ideas principales. Este programa espero que presente una manera eficiente de almacenar y compartir preguntas para ayudar en la preparación ante examenes de opción multiple. Los usuarios podrán escribir sus propias preguntas para responder ellos y compartirlas con otros usuarios que a su vez tambien pueden compartir el banco de preguntas que ellos mismos han creado, simplemente deben compartir la carpeta *"pregu"* donde se encuentran escritas sus preguntas en archivos .txt y las imagenes de las que hacen uso dichas preguntas. 
+Imaginate que con 10 de tus compañeros hacen un grupo de estudio en el que cada quien se inventa 20 preguntas para estudiar Historia, podrán combinar la carpeta *pregu* de cada uno para, entre todos, ¡tener un banco de 200 preguntas con las que practicar!.
+ 
