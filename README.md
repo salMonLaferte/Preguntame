@@ -99,7 +99,7 @@ En el ejemplo anterior, si marcamos ambas opciones correctas y damos click en **
 
 ## Colocar imágenes en una pregunta y en sus opciones.
 
-Pregúntame tiene la opción de adjuntar una imagen junto con el contenido de la pregunta. Para ello coloque la imagen en la carpeta **"pregu".** Dentro del contenido de la pregunta en el archivo de texto escriba al final el carácter **"&"** seguido del nombre de la imagen con su extensión. 
+Pregúntame tiene la opción de adjuntar una imagen junto con el contenido de la pregunta. Para ello coloque la imagen en la carpeta **"*pregu*".** Dentro del contenido de la pregunta en el archivo de texto escriba al final el carácter **"&"** seguido del nombre de la imagen con su extensión. 
 
 #### Ejemplo
 
@@ -112,7 +112,7 @@ Pregúntame tiene la opción de adjuntar una imagen junto con el contenido de la
 } 
 ```
 
-La siguiente imagen "conicas.jpg" deberá estar contenida dentro de la carpeta pregu.
+La siguiente imagen *"conicas.jpg"* deberá estar contenida dentro de la carpeta pregu.
 
 ![image](https://user-images.githubusercontent.com/50729585/123166080-9ea90200-d43a-11eb-885e-5a3279c5bb0a.png)
 
@@ -120,8 +120,8 @@ Así la pregunta se visualizará de la siguiente manera.
 
 ![image](https://user-images.githubusercontent.com/50729585/123166142-b2546880-d43a-11eb-86fc-bd4d6b2761ae.png)
 
-Podemos poner la imagen "conicas.jpg" en subcarpetas de la carpeta "pregu" en ese caso deberemos escribir la ruta relativa a la carpeta "pregu" en el contenido de la pregunta. 
-Por ejemplo, si nuestra imagen se encuentra en "pregu\imagenesDeMate\conicas.jpg" deberemos escribir en el contenido de la pregunta lo siguiente:
+Podemos poner la imagen *"conicas.jpg"* en subcarpetas de la carpeta *"pregu"* en ese caso deberemos escribir la ruta relativa a la carpeta "pregu" en el contenido de la pregunta. 
+Por ejemplo, si nuestra imagen se encuentra en *"pregu\imagenesDeMate\conicas.jpg"* deberemos escribir en el contenido de la pregunta lo siguiente:
 
 ```
 {
@@ -147,7 +147,7 @@ Considere la siguiente pregunta.
 }
 ```
 
-Donde tendremos que tener las imágenes: elipse.jpg, circunferencia.jpg, hiperbola.jpg y parabola.jpg dentro de la carpeta “pregu\imagenesDeMate”.
+Donde tendremos que tener las imágenes: *"elipse.jpg", "ircunferencia.jpg", "hiperbola.jpg" y *"parabola.jpg" dentro de la carpeta *pregu\imagenesDeMate"*
 
 ![image](https://user-images.githubusercontent.com/50729585/123167738-905be580-d43c-11eb-90d2-b254005b93c2.png)
 
@@ -157,7 +157,7 @@ La pregunta será visualizada con la imagen especificada debajo del texto de cad
 
 ## Selección de temas.
 
-Recordemos que cada una de las preguntas en nuestros archivos .txt dentro de la carpeta “pregu” tiene una etiqueta al final:
+Recordemos que cada una de las preguntas en nuestros archivos .txt dentro de la carpeta *"pregu"* tiene una etiqueta al final:
 
 ```
 {
@@ -168,9 +168,9 @@ Recordemos que cada una de las preguntas en nuestros archivos .txt dentro de la 
 }
 ```
 
-Las distintas etiquetas de nuestras preguntas las podremos ver dando click en opciones y yendo a la pestaña “Selección de temas”. Marca los temas de los cuales quieres que el programa te muestre preguntas
+Las distintas etiquetas de nuestras preguntas las podremos ver dando click en opciones y yendo a la pestaña "Selección de temas". Marca los temas de los cuales quieres que el programa te muestre preguntas
 Se recomienda usar etiquetas simples de pocas letras y usando sólo mayúsculas para evitar por error tener preguntas con  etiquetas parecidas (como [Mat] , [MAT]  y [mat.]) y que luego el programa las trate como preguntas de diferentes temas cuando no es la intención.
-Podemos editar el archivo names.txt dentro de la carpeta “pregu”  para que nuestra etiqueta muestre un título más descriptivo en la pestaña de selección, para ello utilice la siguiente sintaxis:
+Podemos editar el archivo names.txt dentro de la carpeta “"pregu"  para que nuestra etiqueta muestre un título más descriptivo en la pestaña de selección, para ello utilice la siguiente sintaxis:
 
 ```
 {"CONICAS":"Identificar gráficas de cónicas",
