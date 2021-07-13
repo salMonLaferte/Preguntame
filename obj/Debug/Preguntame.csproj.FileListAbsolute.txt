@@ -27,7 +27,6 @@ C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame_MarkupCom
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\MainWindow.baml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Opciones.baml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.g.resources
-C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.AboutBox1.resources
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.Properties.Resources.resources
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.GenerateResource.cache
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.CoreCompileInputs.cache

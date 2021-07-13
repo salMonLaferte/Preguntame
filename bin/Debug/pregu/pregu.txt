@@ -3,7 +3,7 @@
 [Contenido de la pregunta]
 [Opción incorrecta1|Opción Incorrecta2|Opción Incorrecta3|Opcion Incorrecta 4|Opcion Incorrecta 5]
 [Opción correcta1|Opción correcta2|Opción correcta3]
-[Tema] 
+[TEMA] 
 }
 
 

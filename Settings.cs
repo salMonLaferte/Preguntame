@@ -15,7 +15,6 @@ namespace Preguntame
         public bool randRightOptions;
         public RightAnswerMode rAnsMode = RightAnswerMode.MarkAll;
         public Dictionary<string, bool> themeSelection;
-        //public bool dontRepeatQuestions;
         public RepeatQuestions repeatQuestions = RepeatQuestions.No;
 
         public static string optionCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -30,6 +29,9 @@ namespace Preguntame
             repeatQuestions = RepeatQuestions.No;
         }
 
+        /// <summary>
+        /// Deletes themes wrote in settings that not exist in the current list of questions.
+        /// </summary>
         public void DeleteUnusedThemeKeys   ()
         {
             List<string> toRemove = new List<string>();
@@ -46,11 +48,24 @@ namespace Preguntame
             }
         }
 
+        /// <summary>
+        /// Returns the character to identify a question option.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
         public char GetCharacterForOption(int num)
         {
             return optionCharacters[num];
         }
 
+        /// <summary>
+        /// Change and save settings.
+        /// </summary>
+        /// <param name="totalOptions"></param>
+        /// <param name="rightAnswers"></param>
+        /// <param name="randRightAnswers"></param>
+        /// <param name="rAnsMode"></param>
+        /// <param name="repeat"></param>
         public void ChangeSettings(int totalOptions = 4, int rightAnswers = 1,
             bool randRightAnswers = false, RightAnswerMode rAnsMode = RightAnswerMode.MarkAll, RepeatQuestions repeat = RepeatQuestions.No)
         {
@@ -64,7 +79,11 @@ namespace Preguntame
             this.repeatQuestions = repeat;
             Data.WriteSettings();
         }
-
+        
+        /// <summary>
+        /// Change and saves settings.
+        /// </summary>
+        /// <param name="changes"></param>
         public void ChangeThemeSelection(Dictionary<string, bool> changes)
         {
             foreach (KeyValuePair<string, bool> k in changes)
@@ -78,6 +97,7 @@ namespace Preguntame
             Data.SelectAllAvailableQuestions();
 
         }
+
 
         public enum RightAnswerMode
         {

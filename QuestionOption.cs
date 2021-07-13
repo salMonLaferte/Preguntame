@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Preguntame
 {
+    /// <summary>
+    /// Provides methods to access the info for a questionOption.
+    /// </summary>
     public class QuestionOption
     {
         private string content;
@@ -21,7 +24,7 @@ namespace Preguntame
         }
 
         /// <summary>
-        /// Get the string of the question option
+        /// Get the string of the question option.
         /// </summary>
         /// <returns></returns> 
         public string GetContent()
@@ -30,7 +33,7 @@ namespace Preguntame
         }
 
         /// <summary>
-        /// Get if the option is right 
+        /// Get if the option is right. 
         /// </summary>
         /// <returns></returns>
         public bool IsRight()
@@ -38,6 +41,10 @@ namespace Preguntame
             return isRight;
         }
 
+        /// <summary>
+        /// Gets the image name for the option.
+        /// </summary>
+        /// <returns></returns>
         public string GetImgName()
         {
             return img;

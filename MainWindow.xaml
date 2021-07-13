@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Preguntame"
         mc:Ignorable="d"
-        Title="Preguntame" Height="720" Width="1280" FontSize="16" ResizeMode="NoResize"  Icon="favicon.ico" FontWeight="Bold"
+        Title="Pregúntame" Height="720" Width="1280" FontSize="16" ResizeMode="NoResize"  Icon="favicon.ico" FontWeight="Bold"
         >
     <Grid>
         <ScrollViewer Width ="1220" MaxHeight="300" VerticalAlignment="Top" HorizontalAlignment="Left" 
                  Margin="20,20,0,0" >
             <TextBlock Name="QuestionText"   VerticalAlignment="Top" HorizontalAlignment="Left" 
                              Margin="20,20,20,20" TextWrapping="WrapWithOverflow" >
-                        Bienvenido a "Preguntame", presiona el boton para empezar a responder preguntas.
+                        Bienvenido a "Pregúntame", presiona el boton para empezar a responder preguntas.
                 <LineBreak></LineBreak>
                 <LineBreak></LineBreak>
                 <Image Source="start.png"></Image>
@@ -23,7 +23,11 @@
             <ScrollViewer Width="1220" MaxHeight="200"  VerticalAlignment="Top" HorizontalAlignment="Left"  
                  Margin="0,0,0,0" >
                 <StackPanel Width="1155" Name="OptionsPanel">
-
+                    <CheckBox>
+                        <TextBlock TextWrapping="WrapWithOverflow">ñsadfkñajdsfkajdsfklñajdfkadsjflkasdjflkajdfklasdjfklasdfjklasdjfklasdjf
+                        jzdflkdsjflkakfjlkdfjlkdadfñjasdkf
+                            ajkdflkadfjlkdajfslkadsflkadjsflksadlkfdjsfaldskjfsfjlkjflkajflkdjflkajdflksasdfkla</TextBlock>
+                    </CheckBox>
                 </StackPanel>
             </ScrollViewer>
         </WrapPanel>

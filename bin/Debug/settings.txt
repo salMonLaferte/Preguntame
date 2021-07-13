@@ -1,12 +1,14 @@
 {
-  "totalOptions": 5,
-  "rightOptions": 2,
+  "totalOptions": 4,
+  "rightOptions": 1,
   "randRightOptions": false,
   "rAnsMode": 0,
   "themeSelection": {
-    "Tema": true,
-    "MAT": false,
-    "CONICAS": true
+    "MAT": true,
+    "CONICAS": true,
+    "TEMA": true,
+    "BIO": true,
+    "HU": true
   },
-  "repeatQuestions": 2
+  "repeatQuestions": 1
 }

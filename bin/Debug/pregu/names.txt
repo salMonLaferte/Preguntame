@@ -5,4 +5,7 @@
 "HU":"Historia Universal",
 "GEO":"Geografía",
 "LIT":"Literatura",
-"FIS":"Fisica"}
+"FIS":"Fisica",
+"CONICAS":"Identificar gráficas de cónicas",
+"MAT" :"Matemáticas",
+"TEMA": "Nombre del tema"}

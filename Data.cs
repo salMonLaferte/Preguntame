@@ -8,19 +8,54 @@ using System.Text.Json.Serialization;
 
 namespace Preguntame
 {
+    /// <summary>
+    /// Provides methods for reading, contain and access questions from the .txt files. Also provides methods for
+    /// reading and writting settings in memory.
+    /// </summary>
     public static class Data
     {
+        /// <summary>
+        /// List of tags with his SubTheme object.
+        /// </summary>
         static Dictionary<string,SubTheme> themes = new Dictionary<string,SubTheme>();
+        /// <summary>
+        /// Tree of subthemes.
+        /// </summary>
         static List<SubTheme> themeTree = new List<SubTheme>();
+        /// <summary>
+        /// List of all the questions readed from .txt files at execution time.
+        /// </summary>
         static List<Question> questionlist = new List<Question>();
+        /// <summary>
+        /// List of all question that accordingly with the settings can be shown to the user.
+        /// </summary>
         static List<Question> availableQuestions = new List<Question>();
+        /// <summary>
+        /// Dictionary of the subthemes TAGs and names (TAG, name).
+        /// </summary>
         static Dictionary<string, string> themesNames = new Dictionary<string, string>();
+        /// <summary>
+        /// Index of the availableQuestion list from the last shown question. 
+        /// </summary>
         static int cntQIndex = 0;
+        /// <summary>
+        /// Number of correct answers in the current session.
+        /// </summary>
         static int cntSesionRightAns = 0;
+        /// <summary>
+        /// Number of the wrong answers in the current session.
+        /// </summary>
         static int cntSesionWrongAns = 0;
-
+        /// <summary>
+        /// Settings of the program
+        /// </summary>
         public static Settings settings = new Settings();
 
+        /// <summary>
+        /// Adds a new theme to the themeTree, themes list and themesNames dictionary, handles if the theme already exist
+        /// </summary>
+        /// <param name="parentTAG"></param>
+        /// <param name="TAG"></param>
         public static void AddTheme(string parentTAG, string TAG)
         {
             if (themes.ContainsKey(TAG))
@@ -47,6 +82,10 @@ namespace Preguntame
             }
         }
 
+        /// <summary>
+        /// Adds a question to the question list, if the theme does not exist in themes it will call AddTheme
+        /// </summary>
+        /// <param name="q"></param>
         public static void AddQuestion(Question q)
         {
             if (!themes.ContainsKey(q.TAG))
@@ -56,6 +95,9 @@ namespace Preguntame
             questionlist.Add(q);
         }
 
+        /// <summary>
+        /// Reads questions from "pregu" folder and calls AddQuestion for every question succesfully readed.
+        /// </summary>
         public static void ReadData()
         {
             string text = "";
@@ -184,6 +226,11 @@ namespace Preguntame
             }
         }
 
+        /// <summary>
+        /// Has to be called when a question is answered, it deletes the question from availableQuestions accordingly to 
+        /// the current settings. Updates the counters for right and wrong answers.
+        /// </summary>
+        /// <param name="isRight"></param>
         public static void QuestionAnswered(bool isRight)
         {
             if (settings.repeatQuestions == Settings.RepeatQuestions.No
@@ -196,6 +243,10 @@ namespace Preguntame
 
         }
 
+        /// <summary>
+        /// Returns a random question from availableQuestions list.
+        /// </summary>
+        /// <returns></returns>
         public static Question GetQuestion()
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
@@ -209,6 +260,9 @@ namespace Preguntame
             return null;
         }
 
+        /// <summary>
+        /// Write settings in disc using JSON serialization.
+        /// </summary>
         public static void WriteSettings()
         {
             var options = new JsonSerializerOptions { WriteIndented = true, IncludeFields = true };
@@ -216,6 +270,9 @@ namespace Preguntame
             System.IO.File.WriteAllText(System.AppDomain.CurrentDomain.BaseDirectory + "\\settings.txt", s);
         }
 
+        /// <summary>
+        /// Reads settings in disc using JSON serialization.
+        /// </summary>
         public static void ReadSettings()
         {
             if (System.IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory + "\\settings.txt"))
@@ -226,6 +283,10 @@ namespace Preguntame
             }
         }
 
+        /// <summary>
+        /// Gets current right and wrong answers for display.
+        /// </summary>
+        /// <returns></returns>
         public static string GetSesionInfo()
         {
             string s = "Sesion actual:    Aciertos = " + cntSesionRightAns.ToString() + "   |    Errores = " + cntSesionWrongAns.ToString();
@@ -234,12 +295,18 @@ namespace Preguntame
             return s;
         }
 
+        /// <summary>
+        /// Writes in disc the names dictionary.
+        /// </summary>
         public static void WriteNames()
         {
             string names =  JsonSerializer.Serialize(themesNames);
             System.IO.File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\names.txt", names);
         }
 
+        /// <summary>
+        /// Reads the names from disc.
+        /// </summary>
         public static void ReadNames()
         {
             if(System.IO.File.Exists(AppDomain.CurrentDomain.BaseDirectory + "\\pregu\\names.txt"))
@@ -257,6 +324,9 @@ namespace Preguntame
             }
         }
 
+        /// <summary>
+        /// Initialize the data, reading from disc everything the program needs to run.
+        /// </summary>
         public static void Initialize()
         {
             ReadSettings();
@@ -267,6 +337,9 @@ namespace Preguntame
             WriteSettings();
         }
 
+        /// <summary>
+        /// Selects the questions that fits with current settings, so it can be printed.
+        /// </summary>
         public static void SelectAllAvailableQuestions() {
             availableQuestions.Clear();
             foreach (KeyValuePair<string,bool> t in settings.themeSelection)
@@ -285,11 +358,22 @@ namespace Preguntame
             }
         }
         
+        /// <summary>
+        /// Get the theme name with the especified TAG, returns "Desconocido" if is not found.
+        /// </summary>
+        /// <param name="TAG"></param>
+        /// <returns></returns>
         public static string GetThemeName(string TAG)
         {
-            return themesNames[TAG];
+            if (themesNames.ContainsKey(TAG))
+                return themesNames[TAG];
+            else return "Desconocido";
         }
 
+        /// <summary>
+        /// Returns a reference to the themes dictionary.
+        /// </summary>
+        /// <returns></returns>
         public static Dictionary<string, SubTheme> GetThemes()
         {
             return themes;

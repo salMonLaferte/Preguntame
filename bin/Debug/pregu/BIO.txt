@@ -1,0 +1,305 @@
+{[Define comensalismo:]
+[Convivencia de dos organismos en el que ambos se benefician.
+|Convivencia de dos organismos donde uno se beneficia y el otro resulta dañado.
+|Convivencia obligada de dos especies que no se pueden separar.]
+[Convivencia de dos organismo de los cuales uno se beneficia y el otro ni se perjudica ni beneficia.]
+[BIO]}
+
+{[La respiración celular y formación de ATP se efectúa en el organelo celular llamado:]
+[cloroplasto|lisosoma|ribosoma|núcleo|aparato de Golgi|Pared celular]
+[mitocondria]
+[BIO]}
+
+{[¿Quiénes fueron los monarcas españoles que Napoleón Bonaparte obligó a abdicar en 1808?] 
+[Luis Bonaparte y Luis XVI |Clemente Metternich y Federico II |Felipe, El Hermoso y Juana, la Loca|Maximiliano y Carlota ] 
+[Carlos IV y Fernando VII ] 
+[HU] } 
+
+{[Organismos pertenecientes al reino protista:]
+[hongos, algas|amibas, cedros|amibas, lombrices|lirios acuaticos, protozoarios| hongos, bacterias|algas verdes, protozoarios]
+[protozoarios, algas rodófitas| protozoarios, paramecium]
+[BIO]}
+
+{[Unidad de interacción entre comunidades biológicas y su medio ambiente:]
+[ecología|bioma|hábitat|pueblo|región natural]
+[ecosistema]
+[BIO]}
+
+{[El principio de segregación es una ley escrita por:]
+[Morgan|Wallace|Darwin|Pasteur]
+[Mendel]
+[BIO]}
+
+{[Se caracteriza por una deficiencia en la respuesta inmunológica. Su forma de transmisión es por vía sexual sanguínea y perinatal]
+[Sifilis|Gonorrea|Herpes genital|Hepatitis C]
+[SIDA/VIH]
+[BIO]}
+
+{[Las virus se reproducen por:]
+[mitosis|germinación|meiosis|esporulación]
+[replicación]
+[BIO]}
+
+{[Cuando un gen presenta dos alelos iguales, esta condición se conoce como:]
+[heterocigoto|gen dominante|alelo recesivo|gen recesivo|alelo recesivo]
+[homocigoto]
+[BIO]}
+
+{[Ejemplo de mutualismo entre organismos.]
+[Lombrices intestinales en humanos.
+|Los búhos y lechuzas del desierto se refugian en agujeros hechos por otras especies dentro de los cactos.
+|Los cangrejos ermitaños, de abdomen blando, aprovechan las conchas vacías de caracoles marinos para introducirse y protegerse, como si fuera propia.]
+[Las abejas, atraídas por la dulzura de las flores, liban el néctar que hay en su interior y sin saberlo se impregnan del polen de la planta, llevándolo a otra planta y así propiciando el intercambio genético entre plantas.
+|En nuestros intestinos hay una flora bacteriana, o sea, un conjunto de especies bacterianas que en lugar de infectarnos y herirnos, nos ayudan a descomponer la comida y a realizar la digestión, beneficiándose también en el proceso.
+|Vacas, bueyes, incluso especies salvajes como los rinocerontes se ven a menudo con aves paradas sobre su lomo, picoteándoles sin hacerles daño. Esto se debe a que las aves se alimentan de las garrapatas y piojos que estos animales poseen, eliminándoles a cambio esa molestia.]
+[BIO]}
+
+{[Ejemplo de comensalismo entre organismos.]
+[Vacas, bueyes, incluso especies salvajes como los rinocerontes se ven a menudo con aves paradas sobre su lomo, picoteándoles sin hacerles daño. Esto se debe a que las aves se alimentan de las garrapatas y piojos que estos animales poseen, eliminándoles a cambio esa molestia.
+|En nuestros intestinos hay una flora bacteriana, o sea, un conjunto de especies bacterianas que en lugar de infectarnos y herirnos, nos ayudan a descomponer la comida y a realizar la digestión, beneficiándose también en el proceso.
+|Lombrices intestinales en humanos.]
+[Los búhos y lechuzas del desierto se refugian en agujeros hechos por otras especies dentro de los cactos.
+|Los cangrejos ermitaños, de abdomen blando, aprovechan las conchas vacías de caracoles marinos para introducirse y protegerse, como si fuera propia.]
+[BIO]}
+
+{[Energía utilizada para la realización de la fase oscura de la fotosíntesis.]
+[Cinética|Dinámica|Luminosa|Potencial|Hidroeléctrica|Solar]
+[Química]
+[BIO]}
+
+{[Ciencia que trata de los principios, métodos y fines de la clasificación, generalmente científica; se aplica, en especial, dentro de la biología para la ordenación jerarquizada y sistemática de los grupos de animales y de vegetales.]
+[Ecología|Fisiología|Genética|Antropología|Biología|Geología]
+[Taxonomía]
+[BIO]}
+
+{[Una consecuencia de la meiosis es la]
+[Especiación biológica|Selección natural|Adaptación funcional]
+[Variación genética]
+[BIO]}
+
+{[Propuso que los cambios ambientales provocan modificaciones adaptativas en los organismos, los cuales son transmitidas a los descendientes]
+[Buffon|Wallace|Darwin|Mendel]
+[Lamarck]
+[BIO]}
+
+{[Reino de la naturaleza formado por células procariontas]
+[Fungi|Plantae|Animalia]
+[Monera]
+[BIO]}
+
+{[En la respiración aerobia, ¿Donde se produce ATP?]
+[Cloroplasto|Ribosoma|Citoplasma|Núcleo|Lisosoma|Plásmido]
+[Mitocondria]
+[BIO]}
+
+{[Un organismo aerobio facultativo funciona con]
+[Presencia de N2|Ausencia de O2|Presencia de CO2|Ausencia de N2]
+[Presencia o ausencia de O2]
+[BIO]}
+
+{[Parte exclusiva de la célula vegetal]
+[Membrana|Centriolo|Núcleo|Mitocondroa|Citoplasma]
+[Pared celular|Cloroplasto]
+[BIO]}
+
+{[Las células que se obtienen de la mitosis al final ¿Cómo son?]
+[Recombinadas|Mutadas|Aisladas|Muertas]
+[Idénticas a sus progenitoras.]
+[BIO]}
+
+{[Las proteínas están formadas por]
+[Cadena de fosfolípidos|Cadena de ácidos grasos|Cadena de carbohidratos|Cadena de ácidos nucleicos]
+[Cadena de aminoácidos]
+[BIO]}
+
+{[Ejemplos de factores abióticos]
+[Suelo, productores|Luz, consumidores|Desintegradores, suelo|Productores, temperatura]
+[Suelo, topografía|Luz, temperatura|Nutrientes, topografía]
+[BIO]}
+
+{[La aptosis es ...] 
+[ La fase de la fotosíntesis en que se genera ADN Y NADPH |La teoría de como surgieron las células eucariontes |Cuando en el citoplasma se rompe la célula de la glucosa en dos  
+células de ácido pircúvico] 
+[La  muerte programada de la célula ] 
+[BIO] } 
+
+{[Es el movimiento de átomos, moléculas o iones de un área de mayor concentración a a otra de menor concentración] 
+[Osmosis |Transporte activo |Presión osmotica] 
+[Difusión simple ] 
+[BIO] }
+
+{[ En su libro Micrographia empleo por primera vez la palabra célula] 
+[ Van Leeuwenhoek |Boveri  |Altmann  |De Duve  |Robert Brown  |H. Dutrochet  |Camilo Golgi  |Jan. E. Purkinje] 
+[Robert Hooke  ] 
+[BIO] } 
+
+{[ Postuló que las plantas y animales están formados por células] 
+[ Van Leeuwenhoek |Boveri  |Altmann  |De Duve  |Robert Hooke  |Robert Brown  |Camilo Golgi  |Jan. E. Purkinje] 
+[H. Dutrochet  ] 
+[BIO] } 
+ 
+{[ Descubrió los microbios en el agua, observando organismos unicelulares nunca antes vistos ] 
+[Boveri  |Altmann  |De Duve  |Robert Hooke  |Robert Brown  |H. Dutrochet  |Camilo Golgi  |Jan. E. Purkinje] 
+[ Van Leeuwenhoek ] 
+[BIO] } 
+ 
+{[ Reconoce el nucleo celular...] 
+[ Van Leeuwenhoek |Boveri  |Altmann  |De Duve  |Robert Hooke  |H. Dutrochet  |Camilo Golgi  |Jan. E. Purkinje] 
+[Robert Brown  ] 
+[BIO] } 
+ 
+{[ Reseñó lo que son las mitocondrias...] 
+[ Van Leeuwenhoek |Boveri  |De Duve  |Robert Hooke  |Robert Brown  |H. Dutrochet  |Camilo Golgi  |Jan. E. Purkinje] 
+[Altmann  ] 
+[BIO] } 
+ 
+{[ Describió el centriolo...] 
+[ Van Leeuwenhoek |Altmann  |De Duve  |Robert Hooke  |Robert Brown  |H. Dutrochet  |Camilo Golgi  |Jan. E. Purkinje] 
+[Boveri  ] 
+[BIO] } 
+ 
+{[ Acuñó el término protoplasma...] 
+[ Van Leeuwenhoek |Boveri  |Altmann  |De Duve  |Robert Hooke  |Robert Brown  |H. Dutrochet  |Camilo Golgi  ] 
+[Jan. E. Purkinje] 
+[BIO] } 
+ 
+{[ Describió los lisosomas...] 
+[ Van Leeuwenhoek |Boveri  |Altmann  |Robert Hooke  |Robert Brown  |H. Dutrochet  |Camilo Golgi  |Jan. E. Purkinje] 
+[De Duve  ] 
+[BIO] } 
+
+{[Es una propiedad de las proteínas] 
+[Sirven como reserva energética. |Constituyen la fuente de energía principal de las celulas |Forman parte del codigo genetico y síntesis de proteínas |Sirven como coenzimas, con funciones cataliticas] 
+[Son los compuestos orgánicos mas abudantes ] 
+[BIO] } 
+
+{[Es una propiedad de las vitaminas] 
+[Son los compuestos orgánicos mas abudantes |Sirven como reserva energética. |Constituyen la fuente de energía principal de las celulas |Forman parte del codigo genetico y síntesis de proteínas ] 
+[Sirven como coenzimas, con funciones cataliticas] 
+[BIO] } 
+
+{[Proceso por el cual se degradan sustancias de complejas a simples] 
+[metabolismo |catalisis |fotosíntesis ] 
+[catabolismo] 
+[BIO] } 
+
+{[¿Cuál es la teoría que postula el origen extraterrestre de la vida en la Tierra?] 
+[Teoría del Caldo Primigenio. |Teoría del Mundo del ARN. |Teoría Endosimbiótica.] 
+[ Teoría de la Panspermia. ] 
+[BIO] } 
+
+{[¿Qué nombre recibe la teoría elaborada por Lynn Margulis para explicar la presencia de organelos altamente especializados en los seres unicelulares primitivos?] 
+[Biosintética. |Plasmogénica. |Heterotrófica.|Panspermia.|Quimiosintética   ] 
+[Endosimbiótica. ] 
+[BIO] } 
+
+{[ Proceso metabólico en el que se transforma energía luminosa en energía química.] 
+[Fermentación. |Glucólisis. |Respiración.|Ciclo de Krebs.|Catabolismo ] 
+[Fotosíntesis. ] 
+[BIO] } 
+ 
+{[Durante la fase luminosa de la fotosíntesis, los citocromos realizan funciones de] 
+[absorción de luz. |transformación de fotones. |producción de oxígeno.  ] 
+[reacciones de óxido reducción. ] 
+[BIO] } 
+
+{[¿Cuál es la función principal de las enzimas?] 
+[Controlar la homeostasis celular. |Incrementar la energía de activación de una reacción. |Ampliar la síntesis de proteínas.|Reserva de energía.|Controlar la aptosis.  ] 
+[Disminuir la energía de activación de una reacción. ] 
+[BIO] } 
+
+{[Introdujo el término homeostasis en su libro "The wisdom of the body" publicación por la que recibió el premio nobel en 1932] 
+[Claude Bernard |Arturo Rosenbluet Sterns| Charles Darwin| Alfred Russel Wallace| Louis Pasteur | Lynn margulis| Aleksandr Oparin ] 
+[Walter Cannon ] 
+[BIO] } 
+
+{[Proceso metabólico que se encarga de sintetizar moléculas complejas a partir de otras más sencillas.] 
+[Oxidación. |Reducción. |Catabolismo.  ] 
+[Anabolismo. ] 
+[BIO] } 
+
+{[¿Cuál es la estructura celular principal que diferencia a las células eucariotas de las procariotas?] 
+[Ribosoma. |Citoesqueleto. |Membrana plasmática.|Citoplasma. ] 
+[Núcleo.  ] 
+[BIO] } 
+
+{[¿Cuál de los siguientes organismos es autótrofo]
+[Hongo| Zorro| Conejo| Protozoario| Bacteria|Arácnido|Ser humano]
+[Cianobacteria|Alga|Planta]  
+[BIO]}
+
+{[¿Cuál de los siguientes organismos es heterótrofo]
+[Cianobacteria|Alga|Planta|Rodofitas]  
+[Hongo| Zorro| Conejo| Protozoario| Bacteria|Arácnido|Ser humano]
+[BIO]}
+
+{[Organelo que se caracteriza por tener una doble membrana, tener su propio ADN y ARN, además de llevar a cabo la fotosíntesis en sus membranas internas.] 
+[Mitocondria. |Lisosoma. |Peroxisoma.|Pared celular|Núcleo.|Núcleolo.|Clorofila. ] 
+[Cloroplasto. ] 
+[BIO] } 
+
+{[Es la estructura que dota a las células de movimiento y cambios en su forma, permite que los organelos se desplacen de una zona a otra del citoplasma y las células de un lugar a otro.] 
+[Flagelos. |Microtúbulos. |Citosol. ] 
+[Citoesqueleto.  ] 
+[BIO] } 
+ 
+{[Es el organelo celular que clasifica, modifica y empaca proteínas recién sintetizadas.] 
+[Mitocondria. |Vacuola. |Núcleo.  ] 
+[Aparato de Golgi. ] 
+[BIO] } 
+
+{[¿Cuál de las siguientes estructuras es un componente fundamental de las células?] 
+[Mitocondria. |Peroxisoma. |Lisosoma.|Pared celular. |Aparato de Golgi. |Glioxisoma.  ] 
+[Citoplasma.|Núcleo.|Membrana plasmática.  ] 
+[BIO] } 
+
+{[Tipo de respiración que se da en el citoplasma] 
+[Aerobia |Catabolica |Anabolica ] 
+[Anaerobia ] 
+[BIO] } 
+ 
+{[Tipo de respiración que se da en la mitocondria] 
+[Anaerobia |Catabolica |Anabolica ] 
+[Aerobia ] 
+[BIO] } 
+ 
+{[En la respiración Aerobia se produce como desecho:] 
+[O2 y ATP |Ácido láctico o etánol |ATP y Oxigeno ] 
+[CO2 Y H20 ] 
+[BIO] } 
+ 
+{[En la respiración Anaerobia se produce como desecho] 
+[CO2 Y H20 |O2 y ATP |ATP y Oxigeno ] 
+[Ácido láctico o etánol ] 
+[BIO] } 
+
+{[Son consumidores primarios:] 
+[hongos, bacterias |lobo, oso |murciélago, ballena  ] 
+[vaca, liebre ] 
+[BIO] } 
+ 
+{[El potencial biótico se define como:] 
+[desplazamiento de una población de organismos, más allá del área que ocupa |característica que indica el número de organismos en que se incrementa una población |magnitud de la población en relación con alguna unidad de espacio o número de organismos de una misma especie|total de especies diferentes en un ecosistema.|Esperanza de vida promedio de una determinada especie dentro de un ecosistema.] 
+[ritmo máximo de crecimiento de una población en condiciones ideales ] 
+[BIO] } 
+
+{[Ernest Haeckel propuso:] 
+[la creación del reino animal y vegetal |la creación del reino monera |la creación de los cinco reinos | la creación del reino Fungi  ] 
+[la creación del reino protista ] 
+[BIO] } 
+
+{[Reino que agrupa a células eucariotes, con pared celular de quitina, de importancia económica, médica, etc. y nutrición heterótrofa:] 
+[plantae |protista |monera| animal  ] 
+[fungi ] 
+[BIO] } 
+
+{[Son enfermedades producidas por una herencia ligada al sexo:] 
+[daltonismo y raquitismo |hemofilia y VIH |diabetes y fenilcetonuria   ] 
+[fenilcetonuria y hemofilia ] 
+[BIO] } 
+
+{[Los gametos se caracterizan porque:] 
+[son diploides, es decir, tienen el total de cromosomas de la especie |son células que contienen la misma información genética de sus progenitores |son células cuyo ciclo celular es breve  ] 
+[son haploides, es decir, contienen la mitad de la información de la dotación de cromosomas ] 
+[BIO] } 
+ 

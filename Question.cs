@@ -8,6 +8,9 @@ using System.Text.Json.Serialization;
 
 namespace Preguntame
 {
+    /// <summary>
+    /// Provides methods to access to the info of a question and check if a given answer is right.
+    /// </summary>
     public class Question
     {
         [JsonInclude]
@@ -30,7 +33,7 @@ namespace Preguntame
         public string TAG;
 
         /// <summary>
-        /// 
+        /// Constructor
         /// </summary>
         /// <param name="question">body of the question</param>
         /// <param name="optionsRight">correct options for the questions</param>
@@ -100,9 +103,9 @@ namespace Preguntame
         }
 
         /// <summary>
-        /// Returns true if the answer selected is right
+        /// Returns true if the answer selected is right.
         /// </summary>
-        /// <param name="number"></param>
+        /// <param name="number">index of qOption</param>
         /// <returns></returns>
         public bool CheckAnswer(int number)
         {
@@ -110,9 +113,9 @@ namespace Preguntame
         }
 
         /// <summary>
-        /// Returns true if all the answers selected are right
+        /// Returns true if all the answers selected are right.
         /// </summary>
-        /// <param name="numbers"></param>
+        /// <param name="numbers">index of qOption</param>
         /// <returns></returns>
         public bool CheckAnswers(int[] numbers)
         {
@@ -125,7 +128,7 @@ namespace Preguntame
         }
 
         /// <summary>
-        /// Get the question text
+        /// Get the question text.
         /// </summary>
         /// <returns></returns>
         public string GetQuestionText()
@@ -134,16 +137,19 @@ namespace Preguntame
         }
 
         /// <summary>
-        /// Generate a random set of options with the specified right and wrong answers 
+        /// Generate a random set of options with the specified right and wrong answers. 
         /// </summary>
-        /// <returns></returns>
+        /// <returns>returns </returns>
         public List<QuestionOption> GenerateAndGetListOfOptions( int rightOptions, int totalOptions)
         {
             GenerateListOfOptions(rightOptions, totalOptions);
             return qOption;
         }
 
-
+        /// <summary>
+        /// Returns the image name for the question body.
+        /// </summary>
+        /// <returns></returns>
         public string GetImageName()
         {
             return imgName;
