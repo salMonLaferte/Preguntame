@@ -38,3 +38,8 @@ C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\Preguntame.applicati
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.exe.manifest
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.application
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Debug\Preguntame.csproj.AssemblyReference.cache
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\Resources\start.png
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\pregu\BIO.txt
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\pregu\HU.txt
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\pregu\names.txt
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Debug\settings.txt

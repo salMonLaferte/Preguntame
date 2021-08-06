@@ -1,0 +1,139 @@
+{[Representante del idealismo como corriente de interpretación del conocimiento histórico]
+[August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine|Karl Marx| Freidrich Engels|Claude Levy-Strauss|Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|Fernand Braudel]
+[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant]
+[HU]}
+
+{[Representante del positivismo como corriente de interpretación del conocimiento histórico]
+[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant|Karl Marx| Freidrich Engels|Claude Levy-Strauss|Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|Fernand Braudel]
+[August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine]
+[HU]}
+
+{[Representante del materialismo histórico como corriente de interpretación del conocimiento histórico]
+[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant|Claude Levy-Strauss|Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|Fernand Braudel|August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine]
+[Karl Marx| Freidrich Engels]
+[HU]}
+
+{[Representante del estructuralismo como corriente de interpretación del conocimiento histórico]
+[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant|Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|Fernand Braudel|August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine|Karl Marx| Freidrich Engels]
+[Claude Levy-Strauss]
+[HU]}
+
+{[Representante del historicismo como corriente de interpretación del conocimiento histórico]
+[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant|Fernand Braudel|August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine|Karl Marx| Freidrich Engels|Claude Levy-Strauss]
+[Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|R.G. Collingwood|José Ortega y Gasset|Benedetto Croce]
+[HU]}
+
+{[Representante de la escuela de los anales como corriente de interpretación del conocimiento histórico]
+[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant|August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine|Karl Marx| Freidrich Engels|Claude Levy-Strauss|Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|R.G. Collingwood|José Ortega y Gasset|Benedetto Croce]
+[Fernand Braudel]
+[HU]}
+
+{[Marca el fin de la edad media]
+[La caída del Imperio Romano de Occidente|La revolución francesa|La primera guerra mundial|El nacimiento de Cristo]
+[La caída del Imperio Romano de Oriente]
+[HU]}
+
+{[Marca el inicio de la edad contemporánea]
+[La caída del Imperio Romano de Occidente|La primera guerra mundial|El nacimiento de Cristo|La caída del Imperio Romano de Oriente|La primera guerra mundial|La segunda guerra mundial| La guerra fría]
+[La revolución francesa]
+[HU]}
+
+{[El estructuralismo propone:]
+[Negar la existencia de leyes históricas| Destacar la importancia del medio geográfico en la  historia| Afirmar que el factor económico es determinante en la historia| Explicar la historia como una lucha de clases|La Historia como una dialéctica del espiritu]
+[Formular leyes generales para la interpretación de la Historia|Estudiar los hechos humanos en función de un comportamiento de estructuras organizadas]
+[HU]}
+
+{[El materialismo histórico propone:]
+[Negar la existencia de leyes históricas| Destacar la importancia del medio geográfico en la  historia|Explicar la historia como una lucha de clases|La Historia como una dialéctica del espíritu|Formular leyes generales para la interpretación de la Historia|Estudiar los hechos humanos en función de un comportamiento de estructuras organizadas]
+[Afirmar que el factor económico es determinante en la historia|Explicar la historia como una lucha de clases ]
+[HU]}
+
+{[El idealismo propone:]
+[Negar la existencia de leyes históricas| Destacar la importancia del medio geográfico en la  historia|Explicar la historia como una lucha de clases|Formular leyes generales para la interpretación de la Historia|Estudiar los hechos humanos en función de un comportamiento de estructuras organizadas|Afirmar que el factor económico es determinante en la historia|Explicar la historia como una lucha de clases]
+[La Historia como una dialéctica del espíritu|La fenomenología del espíritu como fundamento de la civilización, la cultura y las instituciones]
+[HU]}
+
+{[Las fuentes históricas se pueden clasificar en:] 
+[positivistas y materialistas |antiguas y modernas |auxiliares y complementarias|formales e informales| completas e incompletas|principales y secundarias] 
+[directas e indirectas  ] 
+[HU] } 
+
+{[¿Qué disciplina auxiliar de la Historia estudia los restos de civilizaciones antiguas como la cerámica o las ruinas arquitectónicas?] 
+[La Geología |La Paleografía |La Prehistoria |La Geografía] 
+[ La Arqueología ] 
+[HU] } 
+
+{[¿En qué corriente filosófica del siglo XVIII se fundamenta el pensamiento de la Ilustración?] 
+[liberalismo económico|el comunismo|el positivismo|el neoliberalismo| el socialismo científico] 
+[el racionalismo] 
+[HU] } 
+
+{[¿Qué pensador establece la hipótesis sobre el estado de naturaleza para explicar el origen del poder soberano?] 
+[John Locke |Benjamin Franklin |Denis diderot  ] 
+[Thomas Hobbes ] 
+[HU] } 
+ 
+{[¿Cuál es una de las principales aportaciones de Montesquieu?] 
+[La teoría de la fisiocracia |El estado de naturaleza |El liberalismo económico  ] 
+[La división de poderes ] 
+[HU] } 
+
+{[Es un invento de la Revolución Industrial:] 
+[el automovil|la imprenta|la rueda|los reactores nucleares|los molinos de viento|el reloj mecánico] 
+[la máquina de vapor|barrena sembradora|máquina de hilar|termómetro de mercurio ] 
+[HU] } 
+
+{[¿Quiénes fueron los monarcas españoles que Napoleón Bonaparte obligó a abdicar en 1808?] 
+[Luis Bonaparte y Luis XVI |Clemente Metternich y Federico II |Felipe, El Hermoso y Juana, la Loca|Maximiliano y Carlota ] 
+[Carlos IV y Fernando VII ] 
+[HU] } 
+
+{[Cuando el liberalismo económico exige que el Estado no intervenga en la economía pretende:] 
+[generar un monopolio económico |sustentar las bases del socialismo |nacionalizar la producción económica ] 
+[favorecer la propiedad privada ] 
+[HU] } 
+ 
+{[La Revolución Industrial generó un mayor progreso del sistema capitalista ya que:] 
+[el proletariado urbano obtuvo el derecho de huelga y de libre comercio |los socialistas utópicos buscaban mejoras laborales |la monarquía absoluta rechazó los avances de la ciencia ] 
+[la ciencia  y la tecnología perfeccionaron la producción de mercancías ] 
+[HU] } 
+
+{[Es un invento de la Revolución Industrial:] 
+[el automovil |el teléfono |la imprenta ] 
+[la máquina de vapor ] 
+[HU] } 
+ 
+{[El ferrocarril representa:] 
+[el triunfo de la revolución gloriosa |los derechos y libertades civiles |la explotación padecida por los obreros ] 
+[el progreso en la era industrial ] 
+[HU] } 
+
+{[Un proceso político conservador posterior a Napoleón Bonaparte fue:] 
+[el ludismo |el movimiento cartista |la ilustración |la independencia de las siete colonias ] 
+[el Congreso de Viena ] 
+[HU] }
+
+{[Entre los principales fundamentos teóricos del socialismo científico destaca:] 
+[la formación de sindicatos bajo la rectoría del Estado burgués |el liberalismo económico sin ingerencia del Estado |la lucha parlamentaria del proletariado ] 
+[la dictudara del proletariado. ] 
+[HU] } 
+
+{[La unificación de Italia, así como la unifiación alemana representan:] 
+[un retroceso del liberalismo |un lejano antecedente de la Revolución Francesa |un antecedente de la emancipación de América Latina| una consecuencia de la guerra fria| uno de los logros de Adolf Hitler] 
+[el espiritú nacionalista en la Europa del siglo XIX ] 
+[HU] } 
+
+{[La necesidad de obtener materias primas, fuerza de trabajo barata y mercados coloniales para colocar las maufacturas de las potencias industriales son características que distinguen a:] 
+[el cartismo |el mercantilismo |el monopolio|el feudalismo ] 
+[el imperialismo ] 
+[HU] } 
+ 
+{[La obtención de colonias y la formación de protectorados son bases de:] 
+[la factoría |el comunismo |el feudalismo ] 
+[el imperialismo ] 
+[HU] } 
+
+{[¿Cuál de los siguientes territorios en África colonizó Francia desde inicios del siglo XIX?] 
+[Camerún |Angola |Etiopía| Congo] 
+[Argelia| Madagascar ] 
+[HU] }

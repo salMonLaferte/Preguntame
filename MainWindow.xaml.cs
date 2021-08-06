@@ -124,15 +124,15 @@ namespace Preguntame
             }
             if (Data.settings.rAnsMode == Settings.RightAnswerMode.MarkOne)
             {
-                if( selectedOnes.Count !=0 && !somethingWrong)
+                if (selectedOnes.Count != 0 && !somethingWrong)
                 {
                     textToShow += "¡Respuesta correcta! \n";
-                    foreach( CheckBox s in selectedOnes)
+                    foreach (CheckBox s in selectedOnes)
                     {
                         textToShow += ((TextBlock)s.Content).Text + "\n";
                     }
-                        
-                    if(wrongOnes.Count > 0)
+
+                    if (wrongOnes.Count > 0)
                     {
                         textToShow += "Otras respuestas correctas son:\n";
                     }
@@ -140,7 +140,7 @@ namespace Preguntame
                     {
                         textToShow += ((TextBlock)b.Content).Text + "\n";
                     }
-                    DisplayAnswerEvaluation(textToShow, false);
+                    DisplayAnswerEvaluation(textToShow, true);
                     return;
                 }
             }

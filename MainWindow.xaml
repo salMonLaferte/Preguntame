@@ -23,11 +23,6 @@
             <ScrollViewer Width="1220" MaxHeight="200"  VerticalAlignment="Top" HorizontalAlignment="Left"  
                  Margin="0,0,0,0" >
                 <StackPanel Width="1155" Name="OptionsPanel">
-                    <CheckBox>
-                        <TextBlock TextWrapping="WrapWithOverflow">ñsadfkñajdsfkajdsfklñajdfkadsjflkasdjflkajdfklasdjfklasdfjklasdjfklasdjf
-                        jzdflkdsjflkakfjlkdfjlkdadfñjasdkf
-                            ajkdflkadfjlkdajfslkadsflkadjsflksadlkfdjsfaldskjfsfjlkjflkajflkdjflkajdflksasdfkla</TextBlock>
-                    </CheckBox>
                 </StackPanel>
             </ScrollViewer>
         </WrapPanel>

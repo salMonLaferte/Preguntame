@@ -19,7 +19,7 @@ namespace Preguntame.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -57,6 +57,76 @@ namespace Preguntame.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {[Define comensalismo:]
+        ///[Convivencia de dos organismos en el que ambos se benefician.
+        ///|Convivencia de dos organismos donde uno se beneficia y el otro resulta dañado.
+        ///|Convivencia obligada de dos especies que no se pueden separar.]
+        ///[Convivencia de dos organismo de los cuales uno se beneficia y el otro ni se perjudica ni beneficia.]
+        ///[BIO]}
+        ///
+        ///{[La respiración celular y formación de ATP se efectúa en el organelo celular llamado:]
+        ///[cloroplasto|lisosoma|ribosoma|núcleo|aparato de Golgi|Pared celular]
+        ///[mit [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string BIO {
+            get {
+                return ResourceManager.GetString("BIO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {[Representante del idealismo como corriente de interpretación del conocimiento histórico]
+        ///[August Comte|Theodor Mommsen|Émile Durkheim|Hipolyte Taine|Karl Marx| Freidrich Engels|Claude Levy-Strauss|Leopold von Ranke|Wilhelm Dilthley|Arnold Toynbee|Fernand Braudel]
+        ///[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Kant]
+        ///[HU]}
+        ///
+        ///{[Representante del positivismo como corriente de interpretación del conocimiento histórico]
+        ///[Platón|René Descartes|Nicolás Malebrance|Frederik Hegel|Emmanuel Ka [resto de la cadena truncado]&quot;;.
+        /// </summary>
+        internal static string HU {
+            get {
+                return ResourceManager.GetString("HU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {&quot;QUI&quot;:&quot;Quimica&quot;,
+        ///&quot;CV&quot;:&quot;Comunicación verbal&quot;,
+        ///&quot;BIO&quot;:&quot;Biología&quot;,
+        ///&quot;HM&quot;:&quot;Historia de México&quot;,
+        ///&quot;HU&quot;:&quot;Historia Universal&quot;,
+        ///&quot;GEO&quot;:&quot;Geografía&quot;,
+        ///&quot;LIT&quot;:&quot;Literatura&quot;,
+        ///&quot;FIS&quot;:&quot;Fisica&quot;,
+        ///&quot;MAT&quot; :&quot;Matemáticas&quot;
+        ///}.
+        /// </summary>
+        internal static string names {
+            get {
+                return ResourceManager.GetString("names", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a {
+        ///  &quot;totalOptions&quot;: 4,
+        ///  &quot;rightOptions&quot;: 1,
+        ///  &quot;randRightOptions&quot;: false,
+        ///  &quot;rAnsMode&quot;: 0,
+        ///  &quot;themeSelection&quot;: {
+        ///    &quot;BIO&quot;: true,
+        ///    &quot;HU&quot;: true
+        ///  },
+        ///  &quot;repeatQuestions&quot;: 1
+        ///}.
+        /// </summary>
+        internal static string settings {
+            get {
+                return ResourceManager.GetString("settings", resourceCulture);
             }
         }
     }

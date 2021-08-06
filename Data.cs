@@ -234,7 +234,7 @@ namespace Preguntame
         public static void QuestionAnswered(bool isRight)
         {
             if (settings.repeatQuestions == Settings.RepeatQuestions.No
-                || settings.repeatQuestions == Settings.RepeatQuestions.SoloRespondidasMal && isRight)
+                || (settings.repeatQuestions == Settings.RepeatQuestions.SoloRespondidasMal && isRight))
                 availableQuestions.RemoveAt(cntQIndex);
             if (isRight)
                 cntSesionRightAns++;

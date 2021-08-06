@@ -30,7 +30,6 @@ C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame_MarkupC
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\MainWindow.baml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Opciones.baml
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.g.resources
-C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.AboutBox1.resources
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.Properties.Resources.resources
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.csproj.GenerateResource.cache
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.csproj.CoreCompileInputs.cache
@@ -39,3 +38,8 @@ C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.applica
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.csproj.CopyComplete
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.exe
 C:\Users\Dr ID\source\repos\Preguntame\Preguntame\obj\Release\Preguntame.pdb
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Release\Resources\start.png
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Release\pregu\BIO.txt
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Release\pregu\HU.txt
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Release\pregu\names.txt
+C:\Users\Dr ID\source\repos\Preguntame\Preguntame\bin\Release\settings.txt

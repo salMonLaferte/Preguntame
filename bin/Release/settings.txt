@@ -5,10 +5,7 @@
   "rAnsMode": 0,
   "themeSelection": {
     "BIO": true,
-    "HU": true,
-    "MAT": false,
-    "TEMA": false,
-    "CONICAS": false
+    "HU": true
   },
   "repeatQuestions": 1
 }
