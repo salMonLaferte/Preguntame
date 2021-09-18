@@ -7,7 +7,9 @@ Estás preguntas pueden clasificarse en temas y el usuario puede elegir qué tem
 
 ![image](https://user-images.githubusercontent.com/50729585/123034894-08c89500-d3b0-11eb-8159-ecb381f1d080.png)
 
-Descargalo [**aqui**](https://github.com/salMonLaferte/Preguntame/releases/download/v1.0/Preguntamev1.1.rar)
+
+### DESCARGALO [**AQUI**](https://github.com/salMonLaferte/Preguntame/releases/download/v1.0/Preguntamev1.1.rar)
+
 
 # Manual de usuario. 
 En el siguiente manual se especifican todas las opciones que ofrece el programa, para que el usuario pueda aprovecharlo al máximo. A medida que surjan actualizaciones tambien se actualizará este manual.
